@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.body {
+    font-family: ;
+}
+
+#menu{
+    border:2px solid #040110;
+    width: 100%;
+    display: flex;
+    background-color: #040110;   
+}
+
+.botoesmenu{
+    font-family:'', Courier, monospace ;
+}
