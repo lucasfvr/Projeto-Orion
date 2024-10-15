@@ -1,0 +1,169 @@
+body{
+    font-family: Arial, sans-serif;
+    background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
+    color: white;
+    max-width: 2000px;
+    margin: 0 ;
+    margin-top: 0;
+    padding: 15px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+    margin: 0;
+}
+
+ul li{
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    font-size:15px;
+    text-decoration: none;
+}
+
+ul li input{
+    border: 2px solid ;
+    color: #000000;
+    padding: 10px;
+    border-radius: 20px;
+    width: 50%;
+    margin-top: 0px
+}
+#op:hover{
+    color:#4EE6FA;
+    transition: 0.3s all   
+}
+
+#ml:hover{
+    color:#4EE6FA;
+    transition: 0.3s all 
+}
+
+#in:hover{
+    color:#4EE6FA;
+    transition: 0.3s all 
+}
+
+h2{
+    font-size: 45px;
+    line-height: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+span{
+    text-decoration: underline;
+    color: #4EE6FA;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover{
+    transition: 0.3s all;
+    font-weight: bold;
+}
+
+.centralizar{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.logins-btn{
+    border: 2px solid ;
+    color: #4EE6FA;
+    padding: 10px;
+    border-radius: 20px;
+    width: 18%;
+    margin-top: 15px;
+    margin: 10px;
+    text-align: center;
+}
+
+.logins-btn:hover{
+    background-color: #63C3CF;
+    color: white;
+    transition: 0.3s all;
+}
+
+.cadastro-bnt{
+    border: 2px solid;
+    color:#4EE6FA;
+    padding: 10px;
+    border-radius: 20px;
+    width: 18%;
+    margin-top: 15px;
+    margin: 10px;
+    text-align: center;
+}
+
+.cadastro-bnt:hover{
+    background-color: #63C3CF;
+    color: white;
+    transition: 0.3s all;
+}
+
+p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 70px;
+    text-decoration: underline;
+}
+
+.slide{
+    width: 220vh;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.img-position{
+    display: flex;
+    flex-direction: row;
+    width: 100vh;
+    animation: anima 35s linear infinite;
+}
+
+img{
+    width: 150px;
+    margin: 16px;
+    margin-left: 0px;
+}
+
+@keyframes anima {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-205%);
+    }
+}
+
+.rodape{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.redes{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.padding{
+    background-color: #000000;
+    border: #000000 10px;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 90px;
+}
