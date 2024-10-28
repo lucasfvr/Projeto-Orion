@@ -1,0 +1,155 @@
+ 
+
+body { 
+
+    font-family: 'Arial', sans-serif; 
+
+    background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E='); 
+
+    background-size: cover; 
+
+    color: white; 
+
+    margin: 0; 
+
+    display: flex; 
+
+    justify-content: center; 
+
+    align-items: center; 
+
+    height: 100vh; 
+
+    animation: starfield 50s linear infinite; 
+
+} 
+
+ 
+
+@keyframes starfield { 
+
+    0% { background-position: 0% 0%; } 
+
+    100% { background-position: 100% 100%; } 
+
+} 
+
+ 
+
+.container { 
+
+    display: flex; 
+
+    flex-direction: column;  
+
+    align-items: center;      
+
+    justify-content: center;  
+
+    width: 300px; 
+
+    max-width: 90%; 
+
+    background: rgba(10, 10, 20, 0.85); 
+
+    padding: 50px; 
+
+    border-radius: 30px; 
+
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.8); 
+
+    text-align: center; 
+
+    backdrop-filter: blur(15px); 
+
+    gap: 20px;  
+
+} 
+
+ 
+
+ 
+
+.input-group { 
+
+    margin: 20px 0; 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+    align-items: center; 
+
+    width: 100%; 
+
+} 
+
+ 
+
+input { 
+
+    width: 100%; 
+
+    padding: 15px; 
+
+    border: none; 
+
+    border-radius: 10px; 
+
+    font-size: 1.2rem; 
+
+    margin-top: 5px; 
+
+    transition: background-color 0.3s; 
+
+} 
+
+ 
+
+input:hover, input:focus { 
+
+    background-color: rgba(255, 255, 255, 0.1); 
+
+} 
+
+ 
+
+.btn { 
+
+    background-color: #4CAF50; 
+
+    color: white; 
+
+    padding: 18px; 
+
+    border: none; 
+
+    border-radius: 12px; 
+
+    cursor: pointer; 
+
+    width: 90%; 
+
+    font-size: 1.2rem; 
+
+    margin-top: 15px; 
+
+    transition: background-color 0.3s, transform 0.2s; 
+
+} 
+
+
+.btn:hover { 
+
+    background-color: #45a049; 
+
+    transform: scale(1.05); 
+
+} 
+
+
+ 
+
+
+ 
+
