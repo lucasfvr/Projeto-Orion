@@ -1,0 +1,215 @@
+body{
+    font-family: Arial, sans-serif;
+    background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
+    color: white;
+    max-width: 2000px;
+    margin: 0 ;
+    margin-top: 0;
+    padding: 15px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+    margin: 0;
+}
+
+ul li{
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    font-size:15px;
+    text-decoration: none;
+}
+
+ul li input{
+    border: 2px solid ;
+    color: #000000;
+    padding: 10px;
+    border-radius: 20px;
+    width: 50%;
+    margin-top: 0px
+}
+#op:hover{
+    color:#4EE6FA;
+    transition: 0.3s all   
+}
+
+#ml:hover{
+    color:#4EE6FA;
+    transition: 0.3s all 
+}
+
+#in:hover{
+    color:#4EE6FA;
+    transition: 0.3s all 
+}
+
+h2{
+    font-size: 45px;
+    line-height: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+span{
+    text-decoration: underline #63C3CF;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover{
+    transition: 0.3s all;
+    font-weight: bold;
+}
+
+.centralizar{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.logins-btn{
+    border: 2px solid ;
+    color: #4EE6FA;
+    padding: 10px;
+    border-radius: 20px;
+    width: 15%;
+    margin-top: 15px;
+    margin: 10px;
+    text-align: center;
+    transition: 0.3s all;
+}
+
+.logins-btn:hover{
+    width: 16%;
+    background-color: #63C3CF;
+    color: white;
+    transition: 0.3s all;
+}
+
+.cadastro-bnt{
+    border: 2px solid;
+    color:#4EE6FA;
+    padding: 10px;
+    border-radius: 20px;
+    width: 15%;
+    margin-top: 15px;
+    margin: 10px;
+    text-align: center;
+    transition: 0.3s all;
+}
+
+.cadastro-bnt:hover{
+    width: 16%;
+    background-color: #63C3CF;
+    color: white;
+    transition: 0.3s all;
+}
+
+p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 70px;
+    text-decoration: underline #63C3CF;
+}
+
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slide{
+    width: 30%;
+    position: relative;
+    margin-left: 0.5%;
+}
+
+.slide img{
+    width: 150px;
+    border-radius: 10px;
+}
+
+.slides input{
+    display: none;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -150px;
+    display: flex;
+    justify-content: center;
+}
+
+.manualbtn{
+    border: 2px solid #63C3CF;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manualbtn:not(:last-child){
+    margin-right: 30px;
+}
+
+.manualbtn:hover{
+    background-color: #63C3CF;
+}
+
+#r1:checked ~ .first{
+    margin-left: -1;
+}
+
+#r2:checked ~ .first{
+    margin-left: -30%;
+}
+
+#r3:checked ~ .first{
+    margin-left: -60.6%;
+}
+
+
+.rodape{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.redes{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.padding{
+    background-color: #000000;
+    border: #000000 10px;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 90px;
+}
+
+
+
+
+
+

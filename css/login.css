@@ -1,0 +1,132 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes starfield {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+.container {
+    background: rgba(10, 10, 20, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    display: flex;  
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.input-group {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin: 15px 0;
+}
+
+.input-group input {
+    width: 100%; 
+    max-width: 300px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center; 
+    width: 100%; 
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+input:hover, input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block; 
+    margin: 20px auto; 
+    width: 100%; 
+    max-width: 300px; 
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #fff;
+}
+
+.alternative-login {
+    margin-top: 25px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-btn {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+}
+
+.social-btn img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo {
+    width: 100%; 
+    max-width: 300px; 
+    margin-bottom: 30px;
+    border-radius: 10px; 
+}
