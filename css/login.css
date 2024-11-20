@@ -10,62 +10,60 @@ body {
     height: 100vh;
 }
 
-@keyframes starfield {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
-}
-
 .container {
     background: rgba(10, 10, 20, 0.8);
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 25px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
     text-align: center;
     backdrop-filter: blur(10px);
-    display: flex;  
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
 }
 
-h1 {
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .input-group {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 15px 0;
 }
 
 .input-group input {
-    width: 100%; 
-    max-width: 300px; 
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    text-align: center; 
-    width: 100%; 
+    text-align: center;
+    width: 100%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    color: rgb(0, 166, 201);
 }
 
 input {
-    width: 100%;
-    padding: 15px;
     border: none;
-    border-radius: 8px;
     outline: none;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-input:hover, input:focus {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .btn {
@@ -76,12 +74,10 @@ input:hover, input:focus {
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
+    max-width: 300px;
     font-size: 1rem;
+    margin-top: 20px;
     transition: background-color 0.3s, transform 0.2s;
-    display: block; 
-    margin: 20px auto; 
-    width: 100%; 
-    max-width: 300px; 
 }
 
 .btn:hover {
@@ -90,15 +86,16 @@ input:hover, input:focus {
 }
 
 .forgot-password {
-    display: block;
     margin-top: 15px;
     color: #ccc;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 0.9rem;
+    display: block;
+    text-align: center;
 }
 
 .forgot-password:hover {
-    color: #fff;
+    color: white;
 }
 
 .alternative-login {
@@ -107,26 +104,26 @@ input:hover, input:focus {
 
 .social-buttons {
     display: flex;
-    justify-content: space-around;
-}
-
-.social-btn {
-    display: inline-block;
-    transition: transform 0.2s;
-}
-
-.social-btn:hover {
-    transform: scale(1.1);
+    justify-content: center;
+    gap: 15px;
 }
 
 .social-btn img {
     width: 50px;
     height: 50px;
+    transition: transform 0.2s;
+}
+
+.social-btn:hover img {
+    transform: scale(1.1);
 }
 
 .logo {
-    width: 100%; 
-    max-width: 300px; 
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 30px;
-    border-radius: 10px; 
+    border: none;
+    box-shadow: none;
+    outline: none;
+    pointer-events: none;
 }

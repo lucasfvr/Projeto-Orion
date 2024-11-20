@@ -1,105 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion</title>
-    <link rel="stylesheet" href="css/paginainicial.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="css/paginainicial.css">
+  <link rel="shortcut icon" href="ico/Orion-logo-desenho.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div id=>
-            <h1>ORION</h1>
+  
+  <header>
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+            <img src="ico/Orion-logo-desenho.ico" alt="Logo">
+            <a href="#">
+              <h2>ORION</h2>
+            </a>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+              <li>
+                <a href="#">
+                  <span class="material-symbols-outlined">
+                  home
+                  </span>
+                  Início
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="material-symbols-outlined">
+                  star
+                  </span>
+                  Minha lista
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="material-symbols-outlined">
+                  stadia_controller
+                  </span>
+                  Orion Pass
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="material-symbols-outlined">
+                    filter_alt
+                  </span>
+                  Navegar por Categoria
+                </a>
+              </li>
+            </ul>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+        </div>
+
+        <div class="perfil">
+          <a href="#"><img src="ico/rocket_7388563-1.ico"></a>
+          <a href="#"><img src="ico/User.ico" alt="Perfil"></a>
+        </div>
+    </div>
+    </nav>
+  </header>
+
+  <main>
+    <h3><span>Jogos, diversão e muito mais, sem limites.</span></h3>
+    <h3>Experimente uma imersão completa e sinta a emoção de cada escolha!</h3>
+
+    <div class="centralizar">
+      <div class="logins-btn">
+        <a href="login.html">Fazer login</a>
+      </div>
+      <div class="cadastro-bnt">
+        <a href="registro.html">Criar uma conta</a>
+      </div>
+    </div>
+
+    <p>Jogos Disponíveis</p>
+
+    <div class="slider">
+
+      <div class="slides">
+    
+        <input type="radio" name="radio" id="r1">
+        <input type="radio" name="radio" id="r2">
+        <input type="radio" name="radio" id="r3">
+    
+        <div class="slide first">
+          <a href="#"><img src="imagens/Black Myth Wukong.jpg" alt=""></a>
+          <a href="#"><img src="imagens/cuphead.png" alt=""></a>
+          <a href="#"><img src="imagens/cyberpunk.jpg" alt=""></a>
+          <a href="#"><img src="imagens/Dark Souls.png" alt=""></a>
+          <a href="#"><img src="imagens/dragonball.png" alt=""></a>
         </div>
     
+        <div class="slide">
+          <a href="#"><img src="imagens/Elden Ring.png" alt=""></a>
+          <a href="#"><img src="imagens/fc25.png" alt=""></a>
+          <a href="#"><img src="imagens/forza.png" alt=""></a>
+          <a href="#"><img src="imagens/Hollow Knight.png" alt=""></a>
+          <a href="#"><img src="imagens/Read Dead Redemption 2.png" alt=""></a>
+        </div>
+    
+        <div class="slide">
+          <a href="#"><img src="imagens/Sea Of Thieves.png" alt=""></a>
+          <a href="#"><img src="imagens/Sekiro Shadows Die Twice.png" alt=""></a>
+          <a href="#"><img src="imagens/skyrim.png" alt=""></a>
+          <a href="#"><img src="imagens/spider man.png" alt=""></a>
+          <a href="#"><img src="imagens/Zelda breath of te Wild.png" alt=""></a>
+        </div>
+    
+        <div class="navigation-auto">
+          <div class="autobtn1"></div>
+          <div class="autobtn2"></div>
+          <div class="autobtn3"></div>
+        </div>
+    
+      </div>
+    
+      <div class="manual-navigation">
+        <label for="r1" class="manualbtn"></label>
+        <label for="r2" class="manualbtn"></label>
+        <label for="r3" class="manualbtn"></label>
+      </div>
+    
+    </div>
+
+    <div class="blocos">
+
+      <div class="motivos">
+        <h3>Mais motivos para assinar</h3>
+      </div>
+
+      <div class="allblock">
+        <div class="bloco">
+          <h3>
+            Crie perfis para crianças 
+          </h3>
+          <p>
+            Deixe as crianças se aventurarem com seus jogos favoritos em um espaço feito só para elas, sem pagar a mais por isso.
+          </p>
+        </div>
+
+        <div class="bloco">
+          <h3>
+            Jogue em qualquer PC
+          </h3>
+          <p>
+            Nosso produto foi projetado e planejado para tornar os jogos mais acessíveis ao público os fazendo rodar em nuvem. Não necessitando de uma hardware potente, somente de uma boa internet.
+          </p>
+          <p>
+
+          </p>
+        </div>
+
+        <div class="bloco">
+          <h3>
+            Cancele quando quiser
+          </h3>
+          <p>
+            Você pode cancelar sua assinatura quando quiser, caso não estaja satisfeito.
+          </p>
+        </div>
+
+        <div class="bloco">
+          <h3>
+            Jogue quando quiser
+          </h3>
+          <p>
+            Tenha todos os títulos disponíveis prontos para jogar a qualquer momento. 
+          </p>
+        </div>
+
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>Sobre</h3>
         <ul>
-            <a id="in" href="#"><li>Início</li></a>
-            <a id="ml" href="#"><li>Minha Lista</li></a>
-            <a id="op" href="#"><li>Orion  Pass</li></a>
-            <a id="op" href="#"><li>Fale Conosco</li></a>
-            <li><input type="text" placeholder="buscar"></li>
+          <li><a href="#">Nossa Empresa</a></li>
+          <li><a href="#">Carreiras</a></li>
+          <li><a href="#">Investidores</a></li>
         </ul>
-    </header>
+    </div>
 
-    <main>
-        <h2><span>Jogos, diversão e muito mais, sem limites.</span></h2>
-        <h2>Experimente uma imersão completa e sinta a emoção de cada escolha!</h2>
+    <div class="footer-section">
+      <h3>Produtos</h3>
+      <ul>
+        <li><a href="#">Orion Pass</a></li>
+        <li><a href="#">Jogos Disponíveis</a></li>
+        <li><a href="#">Futuras Adições</a></li>
+      </ul>
+    </div>
 
-        <div class="centralizar">
-            <div class="logins-btn">
-                <a href="login.html">Fazer login</a>
-            </div>
-            <div class="cadastro-bnt">
-                <a href="registro.html">Criar uma conta</a>
-            </div>
-        </div>
+    <div class="footer-section">
+      <h3>Suporte</h3>
+      <ul>
+        <li><a href="#">Ajuda e Suporte</a></li>
+        <li><a href="#">Fale Conosco</a></li>
+        <li><a href="#">Serviços</a></li>
+      </ul>
+    </div>
 
-        <p>Jogos Disponíveis ></p>
+    <div class="footer-section">
+      <h3>Nos siga </h3>
+      <ul class="social-links">
+        <li><a href="#"><img src="ico/discordia.png" alt="discord"></a></li>
+        <li><a href="#"><img src="ico/facebook.png" alt="facebook"></a></li>
+        <li><a href="#"><img src="ico/instagram.png" alt="instagram"></a></li>
+      </ul>
+    </div>
+  </div>
+  
 
-        <div class="slider">
+  <div class="footer-bottom">
+    <p>&copy; 2024 Orion. Todos os direitos reservados.</p>
+    <ul class="footer-legal">
+      <li><a href="#">Privacidade</a></li>
+      <li><a href="#">Termos de Serviço</a></li>
+      <li><a href="#">Cookies</a></li>
+    </ul>
+  </div>
+</footer>
 
-            <div class="slides">
-        
-                <input type="radio" name="radio" id="r1">
-                <input type="radio" name="radio" id="r2">
-                <input type="radio" name="radio" id="r3">
-        
-                <div class="slide first">
-                    <a href="#"><img src="imagens/Black Myth Wukong.jpg" alt=""></a>
-                    <a href="#"><img src="imagens/cuphead.png" alt=""></a>
-                    <a href="#"><img src="imagens/cyberpunk.jpg" alt=""></a>
-                    <a href="#"><img src="imagens/Dark Souls.png" alt=""></a>
-                    <a href="#"><img src="imagens/dragonball.png" alt=""></a>
-                </div>
-        
-                <div class="slide">
-                    <a href="#"><img src="imagens/Elden Ring.png" alt=""></a>
-                    <a href="#"><img src="imagens/fc25.png" alt=""></a>
-                    <a href="#"><img src="imagens/forza.png" alt=""></a>
-                    <a href="#"><img src="imagens/Hollow Knight.png" alt=""></a>
-                    <a href="#"><img src="imagens/Read Dead Redemption 2.png" alt=""></a>
-                </div>
-        
-                <div class="slide">
-                    <a href="#"><img src="imagens/Sea Of Thieves.png" alt=""></a>
-                    <a href="#"><img src="imagens/Sekiro Shadows Die Twice.png" alt=""></a>
-                    <a href="#"><img src="imagens/skyrim.png" alt=""></a>
-                    <a href="#"><img src="imagens/spider man.png" alt=""></a>
-                    <a href="#"><img src="imagens/Zelda breath of te Wild.png" alt=""></a>
-                </div>
-        
-                <div class="navigation-auto">
-                    <div class="autobtn"></div>
-                    <div class="autobtn"></div>
-                    <div class="autobtn"></div>
-                </div>
-        
-            </div>
-        
-            <div class="manual-navigation">
-                <label for="r1" class="manualbtn"></label>
-                <label for="r2" class="manualbtn"></label>
-                <label for="r3" class="manualbtn"></label>
-            </div>
-        
-        </div>
-    </main>
-
-    <footer>
-        <div class="padding">
-            <div class="rodape">
-                <a href="#" style="text-decoration: none; margin: 0 10px">Início</a>
-                <a href="#" style="text-decoration: none; margin: 0 10px">Sobre</a>
-                <a href="#" style="text-decoration: none; margin: 0 10px">Serviços</a>
-                <a href="#" style="text-decoration: none; margin: 0 10px">Contato</a>
-            </div>
-                <br>
-            <div class="redes">
-                <a href="#" target="_blank" style="text-decoration: none; margin: 0 10px">Facebook</a>
-                <a href="#" target="_blank" style="text-decoration: none; margin: 0 10px">Twitter</a>
-                <a href="#" target="_blank" style="text-decoration: none; margin: 0 10px;">Instagram</a>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>

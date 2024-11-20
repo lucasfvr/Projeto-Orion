@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Orion</title>
+    <title>Login</title>
+    <link rel="shortcut icon" href="ico/Orion-logo-desenho.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <img src="imagens/logo.jpeg" alt="Logo Streaming Orion" class="logo">
-        <form>
+        <img src="imagens/Orion-sem-fundo.png" alt="Logo Streaming Orion" class="logo">
+        <form method="POST" action="#" aria-labelledby="login-form">
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" name="email" required aria-describedby="emailHelp">
             </div>
             <div class="input-group">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" required>
+                <input type="password" id="senha" name="senha" required aria-describedby="senhaHelp">
             </div>
             <button type="submit" class="btn">Entrar</button>
-            <a href="recsenha.html" class="forgot-password">Recuperar Senha</a>
+            <a href="recsenhaemail.html" class="forgot-password">Recuperar Senha</a>
         </form>
         <div class="alternative-login">
             <p>Ou faça login com:</p>
             <div class="social-buttons">
-                <a href="#" class="social-btn discord"><img src="https://img.icons8.com/color/48/000000/discord-logo.png" alt="Discord"></a>
-                <a href="#" class="social-btn google"><img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google"></a>
-                <a href="#" class="social-btn facebook"><img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook"></a>
+                <a href="https://discord.com" class="social-btn discord" target="_blank" aria-label="Login com Discord">
+                    <img src="https://img.icons8.com/color/48/000000/discord-logo.png" alt="Discord">
+                </a>
+                <a href="https://myaccount.google.com/" class="social-btn google" target="_blank" aria-label="Login com Google">
+                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google">
+                </a>
+                <a href="https://facebook.com.br" class="social-btn facebook" target="_blank" aria-label="Login com Facebook">
+                    <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook">
+                </a>
             </div>
         </div>
     </div>
