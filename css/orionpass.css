@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
+  color: white;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  background-color: #00071c;
+  padding: 3px 35px;
+  color: white;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  transition: 0.5s;
+  color: #00aaff;
+}
+
+.navbar li a{
+  font-size: 23px;
+}
+
+.navbar li .destaque{
+  color: #00aaff;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+  margin-left: -15px;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+}
+
+.nav-links span{
+  width: 30px;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  background-color: #333333;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.perfil{
+  display: flex;
+  margin-left: 30px;
+  gap: 20px;
+}
+
+.asside{
+  display: flex;
+  justify-content: left;
+  margin-top: 100px;
+}
+
+.position{
+  text-align: center;
+  margin: auto;
+}
+
+.position img{
+  width: 200px;
+}
+
+.position h2{
+  font-size: 60px;
+  margin-top: 0px;
+}
+
+.position p{
+  font-size: 30px;
+  width: 1000px;
+}
+
+.position button{
+  transition: 0.5s;
+  margin-top: 40px;
+  font-size: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  width: auto;
+  height: auto;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #00aaff;
+  color: white;
+  text-shadow: black 4px 2px 5px;
+  font-weight: bold;
+}
+
+.position button:hover{
+  transition: 0.5s;
+  padding: 2%;
+}
+
+#valor{
+  font-size: 60px;
+}
+
+.position h3{
+  font-size: 40px;
+}
+
+.section{
+  display: flex;
+  justify-content: right;
+  width: 500px;
+  margin: auto;
+  gap: 40px;
+}
+
+.section img{
+  width: 260px;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.position1 img{
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.position2 img{
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+footer{
+  background-color: #000000;
+  width: 100%;
+  height: 420px;
+  margin-top: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #00aaff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section ul li a img{
+  width: 12%;
+}
+
+.footer-section ul li a:hover {
+  color: #00aaff;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-legal {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-legal li {
+  margin: 0 10px;
+}
+
+.footer-legal li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-legal li a:hover {
+  color: #00aaff;
+}
