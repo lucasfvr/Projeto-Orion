@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco</title>
+    <link rel="stylesheet" href="css/faleconosco.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <script>
+        function habilitarCampos() {
+            const tipo = document.getElementById("tipo");
+            const campos = document.querySelector(".dados-adicionais");
+            if (tipo.value !== "") {
+                campos.style.display = "block";
+            } else {
+                campos.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="Projeto - Faculdade/Projeto - Faculdade/Orion-sem-fundo.png" alt="Logo Streaming Orion" class="logo">
+    </header>
+    <main class="layout">
+        <section class="formulario">
+            <h2>Fale Conosco</h2>
+            <form method="POST" action="#">
+                <div class="input-group">
+                    <label for="tipo">Tipo de Solicitação</label>
+                    <select id="tipo" name="tipo" onchange="habilitarCampos()" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="reclamacao">Reclamação</option>
+                        <option value="duvida">Dúvida</option>
+                    </select>
+                </div>
+                <div class="dados-adicionais" style="display: none;">
+                    <div class="input-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="data-nascimento">Data de Nascimento</label>
+                        <input type="date" id="data-nascimento" name="data-nascimento" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar</button>
+                </div>
+            </form>
+        </section>
+        <aside class="contato-alternativo">
+            <h2>Entre em Contato</h2>
+            <p>Se preferir, entre em contato conosco diretamente:</p>
+            <ul>
+                <li><strong>WhatsApp:</strong> <a href="https://wa.me/seunumero" target="_blank">Clique aqui</a></li>
+                <li><strong>Email:</strong> equipe.orion@gmail.com</li>
+            </ul>
+        </aside>
+    </main>
+</body>
+</html>

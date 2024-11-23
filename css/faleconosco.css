@@ -1,0 +1,126 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header .logo {
+    width: 150px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+main.layout {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.formulario {
+    flex: 1;
+    max-width: 60%; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.formulario h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: rgb(0, 166, 201);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+
+input, select, textarea {
+    width: 62.5%; 
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 125px; 
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.contato-alternativo {
+    flex: 1;
+    max-width: 35%;
+    background: rgba(10, 10, 20, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+
+.contato-alternativo h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: rgb(0, 166, 201);
+}
+
+.contato-alternativo p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contato-alternativo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contato-alternativo li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.contato-alternativo a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.contato-alternativo a:hover {
+    text-decoration: underline;
+}
