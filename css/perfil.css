@@ -1,0 +1,122 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 100;
+    background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.logo {
+    width: 80px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: rgb(0, 166, 201); 
+}
+
+h1 {
+    font-size: 3em; 
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2.5em; 
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.profile-info, .profile-data {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+label {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    width: 200px;
+    font-size: 1.25em;
+    color: white; 
+}
+
+input {
+    flex: 1;
+    max-width: 312px;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-weight: 100;
+    font-size: 1.25em;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: rgb(0, 166, 201);
+    outline: none;
+}
+
+.terms {
+    margin: 20px 0;
+    color: #ccc;
+    font-size: 1.05em;
+}
+
+.btn.blue {
+    background-color: rgb(0, 166, 201);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.btn.blue:hover {
+    background-color: #0056b3;
+}
+
+.avatar-section {
+    position: fixed;
+    top: 450px;
+    right: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.avatar-section .btn.blue {
+    width: 160px;
+    padding: 10px;
+    font-size: 1.25em;
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}

@@ -1,0 +1,263 @@
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #00071c;
+  padding: 3px 35px;
+  color: white;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  transition: 0.5s;
+  color: #00aaff;
+}
+
+.navbar li a{
+  font-size: 23px;
+}
+
+.navbar li .destaque{
+  color: #00aaff;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+  margin-left: -15px;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+}
+
+.nav-links span{
+  width: 30px;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  background-color: #333333;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+input {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.perfil{
+  display: flex;
+  margin-left: 15px;
+}
+
+h3{
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 50px;
+  font-size: 40px;
+  text-decoration: underline;
+  margin-bottom: 50px;
+}
+
+.linha1{
+  display: flex;
+  justify-content: space-around;
+  padding: auto;
+  margin-top: 50px;
+}
+
+.linha1 a img{
+  transition: 0.5s;
+  border-radius: 20px;
+  width: 230px;
+  transition: 0.5s;
+}
+
+.linha1 a img:hover{
+  transition: 0.5s;
+  width: 250px;
+}
+
+.linha2{
+  display: flex;
+  justify-content: space-around;
+  padding: auto;
+  margin-top: 50px;
+}
+
+.linha2 a img{
+  transition: 0.5s;
+  border-radius: 20px;
+  width: 230px;
+}
+
+.linha2 a img:hover{
+  transition: 0.5s;
+  width: 250px;
+}
+
+.linha3{
+  display: flex;
+  justify-content: space-around;
+  padding: auto;
+  margin-top: 50px;
+}
+
+.linha3 a img{
+  transition: 0.5s;
+  border-radius: 20px;
+  width: 230px;
+}
+
+.linha3 a img:hover{
+  transition: 0.5s;
+  width: 250px;
+}
+
+.linha4{
+  display: flex;
+  justify-content: space-around;
+  padding: auto;
+  margin-top: 50px;
+}
+
+.linha4 a img{
+  transition: 0.5s;
+  border-radius: 20px;
+  width: 230px;
+}
+
+.linha4 a img:hover{
+  transition: 0.5s;
+  width: 250px;
+}
+
+footer{
+  background-color: #000000;
+  width: 100%;
+  height: 420px;
+  margin-top: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #00aaff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section ul li a img{
+  width: 12%;
+}
+
+.footer-section ul li a:hover {
+  color: #00aaff;
+}
+
+.social-links ul li {
+  display: inline-block;
+  flex-direction: row;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  bottom: 0;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-legal {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-legal li {
+  margin: 0 10px;
+}
+
+.footer-legal li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-legal li a:hover {
+  color: #00aaff;
+}
