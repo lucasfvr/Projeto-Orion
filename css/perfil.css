@@ -95,6 +95,7 @@ input:focus {
 .avatar-section {
     position: fixed;
     top: 450px;
+    margin-top: -150px;
     right: 320px;
     text-align: center;
     display: flex;

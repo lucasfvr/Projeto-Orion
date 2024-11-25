@@ -1,0 +1,263 @@
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
+  color: white;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  background-color: #00071c;
+  padding: 0px 35px;
+  color: white;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  transition: 0.5s;
+  color: #00aaff;
+}
+
+.navbar li a{
+  font-size: 23px;
+}
+
+.navbar li .destaque{
+  color: #00aaff;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+  margin-left: -15px;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+}
+
+.nav-links span{
+  width: 30px;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  background-color: #333333;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.perfil{
+  display: flex;
+  margin-left: 30px;
+  gap: 20px;
+}
+
+.container{
+  margin: auto;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container h3{
+  transition: 0.3s;
+  font-size: 30px;
+}
+
+.container img{
+  transition: 0.5s;
+  width: 200px;
+  border-radius: 25px;
+}
+
+.not1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.not1 h3{
+  text-align: center;
+}
+
+.not2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 95px;
+}
+
+.not2 h3{
+  width: 1022px;
+  text-align: center;
+}
+
+.not3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 95px;
+}
+
+.not3 h3{
+  width: 1022px;
+  text-align: center;
+}
+
+.not1:hover{
+  cursor: pointer;
+}
+.not2:hover{
+  cursor: pointer;
+}
+.not3:hover{
+  cursor: pointer;
+}
+
+.container h3:hover{
+  transition: 0.5s;
+  color: #00aaff;
+}
+
+.container img:hover{
+  transition: 0.5s;
+  width: 205px;
+  border-radius: 25px;
+}
+
+
+
+
+
+
+footer{
+  background-color: #000000;
+  width: 100%;
+  height: 420px;
+  margin-top: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #00aaff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section ul li a img{
+  width: 12%;
+}
+
+.footer-section ul li a:hover {
+  color: #00aaff;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-legal {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-legal li {
+  margin: 0 10px;
+}
+
+.footer-legal li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-legal li a:hover {
+  color: #00aaff;
+}
