@@ -1,0 +1,72 @@
+
+        body {
+            background-image: url(https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=);
+            justify-content: center;
+            background-color: black;
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+             
+        }
+        
+        h1 {
+            
+            margin-top: 100px;
+            margin-bottom: 50px;
+            text-align: center;
+            font-family:'JetBrains Mono', monospace;
+            color: white;
+            font-size: 60px; 
+        }
+
+        .player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: o 40px;
+            gap: 10px;
+        }
+
+        #centerdiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+            margin: top 80px;;
+
+        }
+
+        footer {
+            display: flex;
+            gap: 90px;
+            color: white;
+            justify-content: center;
+            font-family:'JetBrains Mono', monospace;
+            text-align: center;
+            flex-direction: row;
+            margin-bottom: -20px;
+            position: relative;
+            top: 0px
+        }
+
+        h2 {
+            border-style: inset;
+            text-align: center; 
+            font: 'inter', sans-serif;
+            color: white;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 15%;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(0, 166, 201);
+            border-style: none;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+  
