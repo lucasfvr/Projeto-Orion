@@ -1,0 +1,226 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    background-color: #00071c;
+    padding: 3px 35px;
+    color: white;
+  }
+  
+  .navbar a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover{
+    transition: 0.5s;
+    color: #00aaff;
+  }
+  
+  .navbar li a{
+    font-size: 23px;
+  }
+  
+  .navbar li .destaque{
+    color: #00aaff;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 60px;
+    margin-right: 10px;
+    margin-left: -15px;
+  }
+  
+  .nav-links {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+  }
+  
+  .nav-links span{
+    width: 30px;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+    align-items: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    background-color: #333333;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .search-bar input {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .perfil{
+    display: flex;
+    margin-left: 30px;
+    gap: 20px;
+  }
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    background-color: #00071c;
+    background-image: url(https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=);
+  }
+  
+  h3{
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 40px;
+    text-decoration: underline;
+    margin-bottom: 50px;
+  }
+  
+  .foguete{
+    display: flex;
+    align-items: center;
+  }
+  
+  .foguete img:hover{
+    cursor: pointer;
+  }
+  .destaque a {
+    color: #00BFFF;
+  }
+  
+  .content {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: white; 
+    text-align: left; 
+    margin-bottom: 20px; 
+  }
+  
+  .main-section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center; 
+    position: relative;
+  }
+  
+  .banner {
+    border: 4px solid white; 
+    border-radius: 15px; 
+    overflow: hidden; 
+  }
+  
+  .banner img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+  }
+  
+  .details {
+    max-width: 400px;
+    margin-left: 50px;
+  }
+  
+  .details {
+    max-width: 400px;
+    text-align: justify; 
+  }
+  
+  .details h2 {
+    margin-bottom: 10px;
+    text-align: left; 
+  }
+  .details p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .rating {
+    color: gold;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: 125px;
+  }
+  
+  .play-button {
+    background-color: #00BFFF;
+    color: white;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 125px;
+  }
+  .age-restriction {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .age-restriction img {
+    width: 40px; 
+    height: auto; 
+  }
+  .age-restriction p {
+    font-size: 0.9em;
+    color: #ccc;
+    margin: 0; 
+  }
+  
+  
+  .gallery {
+    display: flex;
+    justify-content: space-between;
+    width: 10%; 
+    margin: 20px auto;
+    gap: 10px;
+    margin-left: 30px;
+  }
+  
+  .gallery img {
+    width: 150px; 
+    height: auto; 
+    border-radius: 5px; 
+    transition: transform 0.3s; 
+    margin: 0; 
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05); 
+  }

@@ -1,0 +1,84 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.logo {
+    width: 80px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em; 
+    color: rgb(0, 166, 201);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+}
+
+.profile-info {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+label {
+    font-weight: 600;
+    width: 200px;
+    font-size: 1.25em;
+    color: white;
+}
+
+input, select {
+    flex: 1;
+    max-width: 312px;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-size: 1.25em;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: rgb(0, 166, 201);
+    outline: none;
+}
+
+.recado {
+    font-size: 1.1em;
+    color: #ccc;
+    margin: 20px 0;
+}
+
+.terms {
+    margin: 20px 0;
+    font-size: 1.05em;
+    color: white;
+}
+
+.btn.blue {
+    background-color: rgb(0, 166, 201);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.btn.blue:hover {
+    background-color: #0056b3;
+}
