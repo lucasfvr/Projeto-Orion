@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Orion</title>
+    <title>Registro</title>
+    <link rel="shortcut icon" href="ico/Orion-logo-desenho.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/registro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <img src="imagens/logo.jpeg" alt="Logo Streaming Orion" class="logo">
-        <form>
-            <div class="input-group">
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" required>
-            </div>
-            <div class="input-group">
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" required>
-            </div>
-            <div class="input-group">
-                <label for="data-nascimento">Data de Nascimento</label>
-                <input type="date" id="data-nascimento" required>
-            </div>
+        <img src="imagens/Orion-sem-fundo.png" alt="Logo Streaming Orion" class="logo">
+        <div="POST" action="#" aria-labelledby="login-form">
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" name="email" >
             </div>
             <div class="input-group">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" required>
+                <input type="password" id="senha" name="senha"  >
             </div>
-            <button type="submit" class="btn">Registrar</button>
-            <a href="#" class="forgot-password">Já possui uma conta? Faça login</a>
+            <a href="perfil.html"><button class="btn">Registrar</button></a>
         </form>
+        <div class="alternative-login">
+            <p>Ou registre-se com:</p>
+            <div class="social-buttons">
+                <a href="https://discord.com" class="social-btn discord" target="_blank" aria-label="Login com Discord">
+                    <img src="https://img.icons8.com/color/48/000000/discord-logo.png" alt="Discord">
+                </a>
+                <a href="https://myaccount.google.com/" class="social-btn google" target="_blank" aria-label="Login com Google">
+                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google">
+                </a>
+                <a href="https://facebook.com.br" class="social-btn facebook" target="_blank" aria-label="Login com Facebook">
+                    <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
