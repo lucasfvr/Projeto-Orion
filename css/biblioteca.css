@@ -101,6 +101,22 @@ h3{
   margin-bottom: 50px;
 }
 
+.filtro{
+  display: flex;
+  justify-content: right;
+  margin: auto;
+  margin-top: -100px;
+  margin-right: 60px;
+}
+
+.filtro img{
+  width: 70px;
+}
+
+.filtro img:hover{
+  cursor: pointer;
+}
+
 .foguete{
   display: flex;
   align-items: center;
