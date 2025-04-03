@@ -1,7 +1,51 @@
+.offcanvas{
+  background-color: #00071C;
+}
+
+.a1{
+  background-color: #00AAFF;
+  border-color: #031633;
+  border-radius: 12px;
+  text-shadow: black 4px 2px 2px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.a2{
+  background-color: #00AAFF;
+  border-color: #031633;
+  border-radius: 12px;
+  text-shadow: black 4px 2px 2px;
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+}
+
+.a3{
+  margin-top: 10%;
+}
+
+.navbar-brand{
+  font-weight: 700;
+}
+
+.texto{
+  font-weight: 700;
+  color: #00AAFF;
+  text-shadow: black 6px 6px 4px;
+}
+
+.texto2{
+  font-weight: 700;
+  text-shadow: black 6px 6px 4px;
+}
+
+h5{
+  color: #00aaff;
+}
+
 body {
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
-  background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
   color: white;
 }
 
@@ -108,54 +152,42 @@ h3{
   font-weight: bold;
 }
 
-.centralizar a:hover{
-  transition: 0.3s all;
-  font-weight: bold;
-}
-
 .centralizar{
   display: flex;
   justify-content: center;
+  gap: 10%;
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
 .logins-btn{
-  border: 2px solid ;
-  color: #00aaff;
-  padding: 10px;
+  transition: 0.5s;
+  margin-top: 40px;
+  font-size: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  width: auto;
+  height: auto;
+  padding: 15px;
   border-radius: 20px;
-  width: 13%;
-  margin: 10px;
-  text-align: center;
-  transition: 0.3s all;
-  font-size: 25px;
-}
-
-.logins-btn:hover{
-  width: 14%;
   background-color: #00aaff;
   color: white;
-  transition: 0.3s all;
+  text-shadow: black 4px 2px 5px;
+  font-weight: bold;
 }
 
 .cadastro-bnt{
-  border: 2px solid;
-  color:#00aaff;
-  padding: 10px;
+  transition: 0.5s;
+  margin-top: 40px;
+  font-size: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  width: auto;
+  height: auto;
+  padding: 15px;
   border-radius: 20px;
-  width: 13%;
-  margin: 10px;
-  text-align: center;
-  transition: 0.3s all;
-  font-size: 25px;
-}
-
-.cadastro-bnt:hover{
-  width: 14%;
   background-color: #00aaff;
   color: white;
-  transition: 0.3s all;
+  text-shadow: black 4px 2px 5px;
+  font-weight: bold;
 }
 
 p{
@@ -197,7 +229,7 @@ p{
 
 .manual-navigation{
   position: absolute;
-  width: 1310px;
+  width: 73%;
   margin-top: -90px;
   display: flex;
   justify-content: center;
@@ -209,8 +241,8 @@ p{
   border-radius: 15px;
   cursor: pointer;
   transition: 0.5s;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 .manualbtn:not(:last-child){
@@ -222,15 +254,15 @@ p{
 }
 
 #r1:checked ~ .first{
-  margin-left: 15px;
+  margin-left: 0.3%;
 }
 
 #r2:checked ~ .first{
-  margin-left: -2190px;
+  margin-left: -59.5%;
 }
 
 #r3:checked ~ .first{
-  margin-left: -4400px;
+  margin-left: -140.5%;
 }
 
 .navigation-auto div{
@@ -297,14 +329,6 @@ p{
 
 .bloco p{
   font-size: 25px;
-}
-
-footer{
-  background-color: #000000;
-  width: 100%;
-  height: 420px;
-  margin-top: 200px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer-container {
@@ -385,4 +409,8 @@ footer{
 
 .footer-legal li a:hover {
   color: #00aaff;
+}
+
+.bg-black{
+  color: black;
 }
