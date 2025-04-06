@@ -1,8 +1,66 @@
 body {
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
-  background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
   color: white;
+}
+
+main{
+  margin-top: 150px;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.a1{
+  background-color: #00AAFF;
+  border-color: #031633;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.offcanvas{
+  background-color: #00071C;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slider {
+  display: flex;
+  gap: 50px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.carousel-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-item {
+  position: relative;
+  min-width: 255PX;
+  height: 360px;
+  overflow: hidden;
+}
+
+.slide-item a img{
+  border-radius: 20px;
+  width: 230px;
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
 }
 
 .navbar{
@@ -97,7 +155,6 @@ h3{
   margin-left: 50px;
   margin-top: 50px;
   font-size: 40px;
-  text-decoration: underline;
   margin-bottom: 50px;
 }
 
@@ -113,17 +170,9 @@ h3{
   width: 70px;
 }
 
-.filtro img:hover{
-  cursor: pointer;
-}
-
 .foguete{
   display: flex;
   align-items: center;
-}
-
-.foguete img:hover{
-  cursor: pointer;
 }
 
 .continue{
@@ -140,11 +189,6 @@ h3{
   transition: 0.5s;
 }
 
-.continue a img:hover{
-  transition: 0.5s;
-  width: 250px;
-}
-
 .recomendados{
   display: flex;
   justify-content: space-around;
@@ -157,11 +201,6 @@ h3{
   border-radius: 20px;
   width: 230px;
   transition: 0.5s;
-}
-
-.recomendados a img:hover{
-  transition: 0.5s;
-  width: 250px;
 }
 
 .acao{
@@ -178,11 +217,6 @@ h3{
   transition: 0.5s;
 }
 
-.acao a img:hover{
-  transition: 0.5s;
-  width: 250px;
-}
-
 .aventura{
   display: flex;
   justify-content: space-around;
@@ -195,11 +229,6 @@ h3{
   border-radius: 20px;
   width: 230px;
   transition: 0.5s;
-}
-
-.aventura a img:hover{
-  transition: 0.5s;
-  width: 250px;
 }
 
 .tiro{
@@ -216,11 +245,6 @@ h3{
   transition: 0.5s;
 }
 
-.tiro a img:hover{
-  transition: 0.5s;
-  width: 250px;
-}
-
 .esportes{
   display: flex;
   justify-content: space-around;
@@ -234,12 +258,6 @@ h3{
   width: 230px;
   transition: 0.5s;
 }
-
-.esportes a img:hover{
-  transition: 0.5s;
-  width: 250px;
-}
-
 
 footer{
   background-color: #000000;
