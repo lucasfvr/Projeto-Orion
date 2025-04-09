@@ -3,7 +3,7 @@ function login(){
     // e.preventDefault();
     const usuario = document.getElementById("email").value
     const senha = document.getElementById("senha").value
-   
+
     let RegUsuario = JSON.parse(localStorage.getItem("RegistrodeUsuarios"))
 
     const checarUsuario = RegUsuario.find(p=>p.nome == usuario)
