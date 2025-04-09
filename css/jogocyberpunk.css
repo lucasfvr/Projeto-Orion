@@ -311,3 +311,16 @@ body {
   text-decoration: none;
   color: white;
 }
+
+.gallery img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery img.zoomed {
+  transform: scale(1.5);
+  z-index: 1000;
+  position: relative;
+}

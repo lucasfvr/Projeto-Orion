@@ -111,6 +111,7 @@
         <div class="ratio ratio-16x9 border border-light rounded-3 overflow-hidden mb-4">
           <iframe src="imagens/WhatsApp Video 2024-11-25 at 15.15.04.mp4" title="YouTube video player" allowfullscreen></iframe>
         </div>
+        <div class="gallery">
         <div class="row g-3">
           <div class="col-4">
             <img src="imagens/pagjogos/Captura de tela 2024-11-25 184841.png" class="img-fluid rounded" style="height: 140px; object-fit: cover; width: 100%;" alt="Cena 1">
@@ -123,7 +124,7 @@
           </div>
         </div>
       </div>
-
+      </div>
       <div class="col-12 col-md-5">
         <p class="texto-grande"><strong></strong> Teste seus reflexos neste emocionante jogo de sobrevivência! Controle um astronauta em fuga, saltando sobre naves alienígenas e escapando de perigos cósmicos. Alien vs. Astronaut combina ação rápida e desafios crescentes em um cenário espacial cheio de aventuras. Até onde você consegue ir?</p>
       
@@ -187,6 +188,27 @@
         }
       });
     }
+  </script>
+  <script>
+    const imagens = document.querySelectorAll('.gallery img');
+    let imagemAtiva = null;
+  
+    imagens.forEach(function(imagem) {
+      imagem.addEventListener('click', function(event) {
+        event.stopPropagation();
+        if (imagemAtiva && imagemAtiva !== this) {
+          imagemAtiva.classList.remove('zoomed');
+        }
+        this.classList.toggle('zoomed');
+        imagemAtiva = this.classList.contains('zoomed') ? this : null;
+      });
+    });
+    document.addEventListener('click', function() {
+      if (imagemAtiva) {
+        imagemAtiva.classList.remove('zoomed');
+        imagemAtiva = null;
+      }
+    });
   </script>
   
   <footer class="bg-black container-fluid a3">

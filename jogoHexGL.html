@@ -105,12 +105,14 @@
   </nav>
 
   <div class="container my-5">
+    
     <h1>HexGL</h1>
     <div class="row g-4 align-items-start">
       <div class="col-12 col-md-7">
         <div class="ratio ratio-16x9 border border-light rounded-3 overflow-hidden mb-4">
           <iframe src="https://www.youtube.com/embed/fDPwlERgfG0?si=mdRzgOUeBFHNcwnQ" title="YouTube video player" allowfullscreen></iframe>
         </div>
+        <div class="gallery">
         <div class="row g-3">
           <div class="col-4">
             <img src="imagens/pagjogos/Hexgl_1.png" class="img-fluid rounded" style="height: 140px; object-fit: cover; width: 100%;" alt="Cena 1">
@@ -123,7 +125,7 @@
           </div>
         </div>
       </div>
-
+    </div>
       <div class="col-12 col-md-5">
         <p class="texto-grande"><strong></strong>  Inspirado em games como F-Zero e Wipeout, o título leva os usuários a um cenário futurista. Lá, será preciso acelerar muito para conseguir completar a prova no menor tempo possível, contando ainda com um hall da fama onde ficam eternizados os nomes dos melhores pilotos</p>
       
@@ -188,6 +190,27 @@
       });
     }
   </script>
+  <script>
+    const imagens = document.querySelectorAll('.gallery img');
+    let imagemAtiva = null;
+  
+    imagens.forEach(function(imagem) {
+      imagem.addEventListener('click', function(event) {
+        event.stopPropagation(); 
+        if (imagemAtiva && imagemAtiva !== this) {
+          imagemAtiva.classList.remove('zoomed');
+        }
+        this.classList.toggle('zoomed');
+        imagemAtiva = this.classList.contains('zoomed') ? this : null;
+      });
+    });
+    document.addEventListener('click', function() {
+      if (imagemAtiva) {
+        imagemAtiva.classList.remove('zoomed');
+        imagemAtiva = null;
+      }
+    });
+  </script>
   
   <footer class="bg-black container-fluid a3">
     <div class="footer-container">
@@ -228,8 +251,6 @@
         </ul>
       </div>
     </div>
-    
-  
     <div class="footer-bottom">
       <p>&copy; 2024 Orion. Todos os direitos reservados.</p>
       <ul class="footer-legal">

@@ -110,6 +110,7 @@
         <div class="ratio ratio-16x9 border border-light rounded-3 overflow-hidden mb-4">
           <iframe src="https://www.youtube.com/embed/E3Huy2cdih0?si=RTkg-aLWZMfOOGkS" title="YouTube video player" allowfullscreen></iframe>
         </div>
+        <div class="gallery">
         <div class="row g-3">
           <div class="col-4">
             <img src="imagens/pagjogos/eldenring_1.png" class="img-fluid rounded" style="height: 140px; object-fit: cover; width: 100%;" alt="Cena 1">
@@ -122,7 +123,7 @@
           </div>
         </div>
       </div>
-
+    </div>
       <div class="col-12 col-md-5">
         <p class="texto-grande"><strong></strong> O NOVO RPG DE AÇÃO E FANTASIA. Levante-se, Maculado, e seja guiado pela graça para portar o poder do Anel Prístino e se tornar um Lorde Prístino nas Terras Intermédias.</p>
       
@@ -186,6 +187,30 @@
         }
       });
     }
+  </script>
+  <script>
+    const imagens = document.querySelectorAll('.gallery img');
+    let imagemAtiva = null;
+  
+    imagens.forEach(function(imagem) {
+      imagem.addEventListener('click', function(event) {
+        event.stopPropagation();
+      
+        if (imagemAtiva && imagemAtiva !== this) {
+          imagemAtiva.classList.remove('zoomed');
+        }
+    
+        this.classList.toggle('zoomed');
+        imagemAtiva = this.classList.contains('zoomed') ? this : null;
+      });
+    });
+  
+    document.addEventListener('click', function() {
+      if (imagemAtiva) {
+        imagemAtiva.classList.remove('zoomed');
+        imagemAtiva = null;
+      }
+    });
   </script>
   
   <footer class="bg-black container-fluid a3">
