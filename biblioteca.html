@@ -52,16 +52,14 @@
         <form class="d-flex mt-1 align-items-center" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
           <button class="btn btn-outline-primary" type="submit">Buscar</button>
-          <div class="perfil dropdown">
+          <div id="teste" class="perfil dropdown d-none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Notificações">
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-              </svg>
+              <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="40" height="40" style="border-radius: 50%;">
             </a>
             <ul class="dropdown-menu" style="position: absolute; inset: 0px 0px auto auto; margin-top: 20px; transform: translate(0px, 34px);">
               <li><a class="dropdown-item" href="#">Perfil</a></li>
               <li><a class="dropdown-item" href="#">Notificações</a></li>
+              <li><a class="dropdown-item logout" href="#">Sair</a></li>
             </ul>
           </div>
         </form>
@@ -71,12 +69,23 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
+        <div class="offcanvas-header ">
           <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">ORION</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li id="teste1" class="d-none">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Notificações">
+                <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="50" height="50" style="border-radius: 50%;">
+                Perfil
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Notificações</a></li>
+                <li><a onclick="logout()" class="dropdown-item" href="#">Sair</a></li>
+              </ul>
+          </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
@@ -104,19 +113,6 @@
                 Orion Pass
               </a>
             </li>
-            <li>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Notificações">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                  </svg>
-                  Perfil
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Perfil</a></li>
-                  <li><a class="dropdown-item" href="#">Notificações</a></li>
-                </ul>
-            </li>
           </ul>
           <form class="d-flex mt-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -125,7 +121,7 @@
         </div>
       </div>
     </div>
-  </nav>
+</nav>
 
   <main class="">
     <button type="button" class="a1 btn btn-primary logins-btn text-center mx-5 fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal">

@@ -1,15 +1,22 @@
 body {
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
-  background: url('https://media.istockphoto.com/id/498478219/pt/foto/c%C3%A9u-de-estrelas-%C3%A0-noite.jpg?s=612x612&w=0&k=20&c=0VRrZurbq64yASyoDPoHs8_EaIE6Sc972dRybkQBZ1E=');
   color: white;
+}
+
+.offcanvas{
+  background-color: #00071C;
+}
+
+.navbar-brand{
+  font-weight: 700;
 }
 
 .navbar{
   display: flex;
   align-items: center;
   background-color: #00071c;
-  padding: 3px 35px;
+  padding: 0px 35px;
   color: white;
 }
 
@@ -33,7 +40,7 @@ body {
 
 .logo {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   display: flex;
   align-items: center;
 }
@@ -90,6 +97,11 @@ body {
   display: flex;
   margin-left: 30px;
   gap: 20px;
+}
+
+main{
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .asside{
@@ -169,17 +181,10 @@ body {
   margin-bottom: 30px;
 }
 
-
-
-
-
-
-
-
 footer{
   background-color: #000000;
   width: 100%;
-  height: 420px;
+  height: 100%;
   margin-top: 200px;
   font-family: Arial, Helvetica, sans-serif;
 }

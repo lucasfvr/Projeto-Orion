@@ -1,3 +1,21 @@
+.offcanvas-body{
+  background-color: #00071C;
+}
+
+.offcanvas-header{
+  background-color: #00071C;
+}
+
+.navbar-brand{
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+}
+
 .navbar{
   display: flex;
   align-items: center;
@@ -34,7 +52,7 @@
 .logo img {
   height: 60px;
   margin-right: 10px;
-  margin-left: -15px; 
+  margin-left: -15px;
 }
 
 .nav-links {
@@ -79,13 +97,11 @@
   outline: none;
 }
 
-.perfil {
+.perfil{
   display: flex;
   margin-left: 30px;
   gap: 20px;
 }
-
-
 
 .main-section {
   display: flex;
@@ -94,7 +110,6 @@
   justify-content: center;
   position: relative;
 }
-
 
 .rating {
   color: gold;
@@ -180,7 +195,6 @@
   text-decoration: none;
   text-align: center;
   margin-left: 200px;
- 
 }
 
 
