@@ -6,7 +6,7 @@
   background-color: #00AAFF;
   border-color: #031633;
   border-radius: 12px;
-  text-shadow: black 4px 2px 2px;
+  text-shadow: black 1px 1px 2px;
   font-weight: 700;
   font-size: 20px;
 }
@@ -15,7 +15,7 @@
   background-color: #00AAFF;
   border-color: #031633;
   border-radius: 12px;
-  text-shadow: black 4px 2px 2px;
+  text-shadow: black 1px 1px 2px;
   font-weight: 700;
   font-size: 20px;
   width: 100%;
@@ -32,12 +32,10 @@
 .texto{
   font-weight: 700;
   color: #00AAFF;
-  text-shadow: black 6px 6px 4px;
 }
 
 .texto2{
   font-weight: 700;
-  text-shadow: black 6px 6px 4px;
 }
 
 h5{
@@ -172,7 +170,6 @@ h3{
   border-radius: 20px;
   background-color: #00aaff;
   color: white;
-  text-shadow: black 4px 2px 5px;
   font-weight: bold;
 }
 
@@ -187,7 +184,6 @@ h3{
   border-radius: 20px;
   background-color: #00aaff;
   color: white;
-  text-shadow: black 4px 2px 5px;
   font-weight: bold;
 }
 

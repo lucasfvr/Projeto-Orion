@@ -1,9 +1,17 @@
+.offcanvas{
+  background-color: #00071C;
+}
+
 .navbar{
   display: flex;
   align-items: center;
   background-color: #00071c;
   padding: 0px 35px;
   color: white;
+}
+
+.navbar-brand{
+  font-weight: 700;
 }
 
 .navbar a{
@@ -170,7 +178,7 @@
   background-color: #00AAFF;
   border-color: #031633;
   border-radius: 12px;
-  text-shadow: black 4px 2px 2px;
+  text-shadow: black 1px 1px 1px;
   font-weight: 700;
   font-size: 20px;
   padding: 10px 30px;
@@ -284,6 +292,9 @@
 }
 body {
   padding-top: 130px;
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
 }
 .main-content {
   margin-top: 110px; 
@@ -293,7 +304,7 @@ body {
  background-color: #00AAFF;
   border-color: #031633;
   border-radius: 12px;
-  text-shadow: black 4px 2px 2px;
+  text-shadow: black 1px 1px 2px;
   font-weight: 700;
   font-size: 20px;
   padding: 10px 30px;
