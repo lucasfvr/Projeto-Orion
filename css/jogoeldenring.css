@@ -135,29 +135,6 @@
   color: #ccc;
   margin: 0;
 }
-
-@media (max-width: 768px) {
-  .details {
-    margin-left: 0;
-    max-width: 100%;
-  }
-
-  .rating,
-  .play-button {
-    margin-left: 0;
-    display: block;
-    margin: 20px auto;
-  }
-
-  .gallery img {
-    width: 100%;
-  }
-
-  .gallery {
-    margin: 10px;
-  }
-}
-
 .rating .star {
   font-size: 2rem;
   color: gold;
