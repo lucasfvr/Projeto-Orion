@@ -2,6 +2,12 @@
   background-color: #00071C;
 }
 
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+}
+
 .navbar{
   display: flex;
   align-items: center;
