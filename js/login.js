@@ -1,8 +1,7 @@
+function login(){
     let Perfilnav = document.querySelector(".perfilnav")
     let PerfilDrop = document.querySelector(".perfilDrop")
     const loginRealizado = document.querySelector(".loginRealizado")
-
-function login(){
     const usuario = document.getElementById("email").value
     const senha = document.getElementById("senha").value
     const emailErro = document.querySelector(".emailErro")
@@ -47,13 +46,13 @@ function login(){
 }
 
 function logout(){
+    let Perfilnav = document.querySelector(".perfilnav")
+    let PerfilDrop = document.querySelector(".perfilDrop")
     const loginRealizado = document.querySelector(".loginRealizado")
-
+    
     localStorage.removeItem("UsuarioLogado")
-    loginRealizado.classList.add("d-none")
     PerfilDrop.classList.add("d-none")
     Perfilnav.classList.add("d-none")
 }
 
-document.querySelector("#lgnBtn").addEventListener("click", login)
-document.querySelector(".logout").addEventListener("click", logout)
+

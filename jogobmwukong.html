@@ -53,14 +53,14 @@
         <form class="d-flex mt-1 align-items-center" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
           <button class="btn btn-outline-primary" type="submit">Buscar</button>
-          <div class="perfil dropdown">
+          <div class="perfilnav perfil dropdown d-none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Notificações">
               <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="40" height="40" style="border-radius: 50%;">
             </a>
             <ul class="dropdown-menu" style="position: absolute; inset: 0px 0px auto auto; margin-top: 20px; transform: translate(0px, 34px);">
               <li><a class="dropdown-item" href="escolhaoperfil.html">Perfil</a></li>
-              <li><a class="dropdown-item" href="#">Notificações</a></li>
-              <li><a class="dropdown-item logout" href="#">Sair</a></li>
+              <li><a class="dropdown-item" href="minhalista.html">Minha lista</a></li>
+              <li><a onclick="logout()" class="dropdown-item" href="#">Sair</a></li>
             </ul>
           </div>
         </form>
@@ -76,14 +76,14 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li>
+            <li class="perfilDrop d-none">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Notificações">
                 <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="50" height="50" style="border-radius: 50%;">
                 Perfil
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="escolhaoperfil.html">Perfil</a></li>
-                <li><a class="dropdown-item" href="#">Notificações</a></li>
+                <li><a class="dropdown-item" href="minhalista.html">Minha Lista</a></li>
                 <li><a onclick="logout()" class="dropdown-item" href="#">Sair</a></li>
               </ul>
           </li>
