@@ -1,15 +1,17 @@
-body {
-  margin: 0;
-  font-family: 'JetBrains Mono', monospace;
-  color: white;
+.offcanvas{
+  background-color: #00071C;
 }
 
-.navbar {
+.navbar{
   display: flex;
   align-items: center;
   background-color: #00071c;
-  padding: 3px 35px;
+  padding: 0px 35px;
   color: white;
+}
+
+.navbar-brand{
+  font-weight: 700;
 }
 
 .navbar a{
@@ -32,7 +34,7 @@ body {
 
 .logo {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   display: flex;
   align-items: center;
 }
@@ -40,7 +42,7 @@ body {
 .logo img {
   height: 60px;
   margin-right: 10px;
-  margin-left: -15px;
+  margin-left: -15px; 
 }
 
 .nav-links {
@@ -59,7 +61,7 @@ body {
   align-items: center;
 }
 
-a {
+.nav-links a {
   display: flex;
   color: white;
   text-decoration: none;
@@ -77,7 +79,7 @@ a {
   border-radius: 5px;
 }
 
-input {
+.search-bar input {
   border: none;
   background: transparent;
   color: white;
@@ -85,10 +87,12 @@ input {
   outline: none;
 }
 
-.perfil{
+.perfil {
   display: flex;
-  margin-left: 15px;
+  margin-left: 30px;
+  gap: 20px;
 }
+
 
 h3{
   text-align: left;

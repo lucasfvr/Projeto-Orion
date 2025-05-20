@@ -1,4 +1,6 @@
 function login(){
+    let OcultarBtnLogin = document.querySelector(".logins-btn")
+    let OcultarBtnLogout = document.querySelector(".cad-btn")
     let Perfilnav = document.querySelector(".perfilnav")
     let PerfilDrop = document.querySelector(".perfilDrop")
     const loginRealizado = document.querySelector(".loginRealizado")
@@ -42,17 +44,9 @@ function login(){
         loginRealizado.classList.remove("d-none")
         PerfilDrop.classList.remove("d-none")
         Perfilnav.classList.remove("d-none")
+        OcultarBtnLogin.classList.add('d-none')
+        OcultarBtnLogout.classList.add('d-none')
     }    
-}
-
-function logout(){
-    let Perfilnav = document.querySelector(".perfilnav")
-    let PerfilDrop = document.querySelector(".perfilDrop")
-    const loginRealizado = document.querySelector(".loginRealizado")
-    
-    localStorage.removeItem("UsuarioLogado")
-    PerfilDrop.classList.add("d-none")
-    Perfilnav.classList.add("d-none")
 }
 
 
