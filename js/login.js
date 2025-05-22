@@ -6,8 +6,7 @@ function login(){
     const loginRealizado = document.querySelector(".loginRealizado")
     const usuario = document.getElementById("email").value
     const senha = document.getElementById("senha").value
-    const emailErro = document.querySelector(".emailErro")
-    const senhaErro = document.querySelector(".senhaErro")
+    const LoginErro = document.querySelector(".senhaErro")
 
     let RegUsuario = JSON.parse(localStorage.getItem("RegistrodeUsuarios"))
 
@@ -16,19 +15,17 @@ function login(){
     let userkey = false
     let senhakey = false
 
-    if(checarUsuario == "")alert("funcionou")
-
-    if(checarUsuario.nome == usuario){
-        userkey = true       
+    if(checarUsuario == undefined){
+        LoginErro.innerHTML = `<p class="mt-1 mb-1 fs-5 text text-danger">Email incorretos!</p>`
+    }else{
+        userkey = true
     }
 
     if(checarUsuario.senha == senha){
         senhakey = true
     }else{
-        senhaErro.innerHTML = `<p class="mt-1 mb-1 fs-5 text text-danger">Senha ou email estão incorretos!</p>`
+        LoginErro.innerHTML = `<p class="mt-1 mb-1 fs-5 text text-danger">Senha incorretos!</p>`
     }
-
-
 
     if(userkey === true && senhakey === true){
         localStorage.setItem("UsuarioLogado", JSON.stringify(
@@ -40,7 +37,7 @@ function login(){
     console.log(senhakey)
     console.log(userkey)
 
-        senhaErro.innerHTML = ` `
+        LoginErro.innerHTML = ` `
         loginRealizado.classList.remove("d-none")
         PerfilDrop.classList.remove("d-none")
         Perfilnav.classList.remove("d-none")

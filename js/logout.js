@@ -10,4 +10,5 @@ function logout(){
   Perfilnav.classList.add("d-none")
   OcultarBtnLogin.classList.remove('d-none')
   OcultarBtnLogout.classList.remove('d-none')
+  loginRealizado.classList.add("d-none")
 }
