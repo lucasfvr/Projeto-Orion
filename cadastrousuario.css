@@ -259,14 +259,7 @@
   color: black;
 }
 
-.texto-grande {
-  font-size: 1.75rem;   
-  max-width: 500px;
-  text-align: justify;
-  color: white;
-  margin-left:30px
 
-}
 body {
   padding-top: 130px;
   margin: 0;
@@ -300,33 +293,111 @@ body {
   color: white;
 }
 
-.gallery img {
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  max-width: 100%;
-  height: auto;
+
+.cadastro-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  background-color: #031633;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
+  color: white;
 }
 
-.gallery img.zoomed {
-  transform: scale(1.5);
-  z-index: 1000;
-  position: relative;
+.cadastro-container h2 {
+  text-align: center;
+  color: #00aaff;
+  margin-bottom: 30px;
+  font-size: 28px;
 }
 
-.excluir-comentario:hover {
-  transform: scale(1.05);
-  background-color: #dc3545;
-  border-color: #dc3545;
+.subtitulo {
+  color: #00aaff;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
-.bi-trash {
-  margin-right: 5px;
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.card {
-  transition: all 0.3s ease;
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
 }
 
-.card:hover {
-  box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.form-group input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a1a2e;
+  color: white;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 1px solid #00aaff;
+  background-color: #0f1a2b;
+}
+
+.checkbox {
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.checkbox input {
+  margin-right: 10px;
+}
+
+.avatar-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.avatar-img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+.avatar-label {
+  display: block;
+  color: #00aaff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#avatarUpload {
+  background-color: #1a1a2e;
+  color: white;
+  border: 1px solid #00aaff;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.avatar-img {
+  margin-top: 15px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #00aaff;
 }

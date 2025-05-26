@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EA SPORTS FC™ 25</title>
+  <title>Cadastro usuario</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/jogofifa.css">
+  <link rel="stylesheet" href="cadastrousuario.css">
   <link rel="shortcut icon" href="ico/Orion-logo-desenho.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
@@ -123,251 +123,106 @@
       </div>
     </div>
 </nav>
+<section class="cadastro-container">
+  <h2>Minha conta</h2>
 
-  <div class="container my-5">
-    <h1>EA SPORTS FC™ 25</h1>
-    <div class="row g-4 align-items-start">
-      <div class="col-12 col-md-7">
-        <div class="ratio ratio-16x9 border border-light rounded-3 overflow-hidden mb-4">
-          <iframe src="https://www.youtube.com/embed/vRj5GCDPv64?si=PVTaUwkApL0osNnq" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-        <div class="gallery">
-        <div class="row g-3">
-          <div class="col-4">
-            <img src="imagens/pagjogos/fc25_1.png" class="img-fluid rounded" style="height: 140px; object-fit: cover; width: 100%;" alt="Cena 1">
-          </div>
-          <div class="col-4">
-            <img src="imagens/pagjogos/fc25_2.png" class="img-fluid rounded" style="height: 140px; object-fit: cover; width: 100%;" alt="Cena 2">
-          </div>
-          <div class="col-4">
-            <img src="imagens/pagjogos/fc25_3.png" class="img-fluid rounded" style="height: 140px; object-fit: cover; width: 100%;" alt="Cena 3">
-          </div>
-        </div>
+  <form class="cadastro-form">
+    <h3 class="subtitulo">Informações do avatar:</h3>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="jogador">Nome do jogador:</label>
+        <input type="text" id="jogador" name="jogador" required>
+      </div>
+
+      <div class="form-group">
+        <label for="categoria">Categoria favorita:</label>
+        <input type="text" id="categoria" name="categoria" required>
+      </div>
+
+      <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required>
+      </div>
+
+      <div class="form-group">
+        <label for="classificacao">Classificação etária:</label>
+        <input type="text" id="classificacao" name="classificacao" required>
       </div>
     </div>
-      <div class="col-12 col-md-5">
-        <p class="texto-grande"><strong></strong> O EA SPORTS FC™ 25 oferece mais maneiras de ganhar pelo clube. Jogue com suas amizades nos seus modos favoritos com o novo Rush 5x5 e leve seu clube à vitória com o FC IQ dando mais controle tático do que nunca.</p>
-      
-        <div class="mt-4">
-          <a href="#" class="a1">JOGAR</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="main-content">
-<div class="container my-4">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8">
-      <div id="comentarios-container" class="mb-4">
-      </div>
-      <textarea id="comentario-texto" class="form-control mb-2" rows="6" placeholder="Escreva seu comentário..."></textarea>
-      <div class="d-flex justify-content-between align-items-center mt-1">
-        <div>
-          <button id="enviar-comentario" class="adicionar-btn">Enviar</button>
-        </div>
-        <div class="rating text-end">
-          <span class="star" data-value="1">★</span>
-          <span class="star" data-value="2">★</span>
-          <span class="star" data-value="3">★</span>
-          <span class="star" data-value="4">★</span>
-          <span class="star" data-value="5">★</span>
-        </div>
-      </div>
-    </div>
-  </div>
+
+   <div class="avatar-section">
+  <label for="avatarUpload" class="avatar-label">Escolha um avatar:</label>
+  <input type="file" id="avatarUpload" accept="image/*">
+  <img id="avatarPreview" src="#" alt="Prévia do avatar" class="avatar-img" style="display:none;">
 </div>
-<script>document.addEventListener('DOMContentLoaded', function() {
-  const enviarBtn = document.getElementById('enviar-comentario');
-  const comentarioTexto = document.getElementById('comentario-texto');
-  const comentariosContainer = document.getElementById('comentarios-container');
-  
-  function usuarioLogado() {
-    return JSON.parse(localStorage.getItem('UsuarioLogado'));
-  }
-  
 
-  function isAdmin() {
-    const user = usuarioLogado();
-    return user && user.isAdmin === true;
-  }
-  
+    <h3 class="subtitulo">Dados do meu perfil:</h3>
 
-  function formatarData(dataString) {
-    const data = new Date(dataString);
-    return data.toLocaleDateString('pt-BR') + ' às ' + data.toLocaleTimeString('pt-BR');
-  }
-  
-  function carregarComentarios() {
-  const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
-  comentariosContainer.innerHTML = '';
-  
-  const usuarioAtual = usuarioLogado();
-  
-  comentarios.forEach((comentario, index) => {
-    const podeExcluir = usuarioAtual && 
-                       (usuarioAtual.usuario === comentario.usuario || isAdmin());
-    
-    const comentarioHTML = `
-      <div class="card mb-3 bg-dark bg-opacity-50 border-light" data-id="${index}">
-        <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <h5 class="card-title text-primary">${formatarNomeUsuario(comentario.usuario)}</h5>
-            ${podeExcluir ? 
-              `<button class="btn btn-sm btn-danger excluir-comentario" data-id="${index}">
-                <i class="bi bi-trash"></i> Excluir
-              </button>` : ''
-            }
-          </div>
-          <p class="card-text">${comentario.texto}</p>
-          <div class="text-warning mb-2">
-            ${'★'.repeat(comentario.avaliacao)}${'☆'.repeat(5 - comentario.avaliacao)}
-          </div>
-          <small class="text-muted">${formatarData(comentario.data)}</small>
-        </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" required>
       </div>
-    `;
-    comentariosContainer.innerHTML += comentarioHTML;
-  });
-  
-  document.querySelectorAll('.excluir-comentario').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const id = parseInt(this.getAttribute('data-id'));
-      excluirComentario(id);
-    });
-  });
-}
-  
 
-  function excluirComentario(id) {
-    if (!confirm('Tem certeza que deseja excluir este comentário?')) return;
-    
-    const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
-    comentarios.splice(id, 1);
-    localStorage.setItem('ComentariosFC25', JSON.stringify(comentarios));
-    carregarComentarios();
-  }
-  
+      <div class="form-group">
+        <label for="nascimento">Data de nascimento:</label>
+        <input type="date" id="nascimento" name="nascimento" required>
+      </div>
 
-  enviarBtn.addEventListener('click', function() {
-    const usuario = usuarioLogado();
-    if (!usuario) {
-      alert('Você precisa estar logado para comentar!');
-      return;
-    }
-    
-    const texto = comentarioTexto.value.trim();
-    if (!texto) {
-      alert('Por favor, escreva um comentário!');
-      return;
-    }
-    
-    const estrelasSelecionadas = document.querySelectorAll('.star.selected').length;
-    if (estrelasSelecionadas === 0) {
-      alert('Por favor, avalie o jogo!');
-      return;
-    }
-    
-    const novoComentario = {
-      usuario: usuario.usuario,
-      texto: texto,
-      avaliacao: estrelasSelecionadas,
-      data: new Date().toISOString()
-    };
-    
-   
-    const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
-    comentarios.unshift(novoComentario);
-    localStorage.setItem('ComentariosFC25', JSON.stringify(comentarios));
-    
- 
-    carregarComentarios();
-    comentarioTexto.value = '';
-    
+      <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required>
+      </div>
 
-    document.querySelectorAll('.star.selected').forEach(star => {
-      star.classList.remove('selected');
-    });
-  });
-  
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
 
-  const stars = document.querySelectorAll('.star');
-  stars.forEach(star => {
-    star.addEventListener('click', function() {
-      const value = parseInt(this.getAttribute('data-value'));
-      
-      stars.forEach((s, index) => {
-        if (index < value) {
-          s.classList.add('selected');
-        } else {
-          s.classList.remove('selected');
-        }
-      });
-    });
-  });
-  
-  
-  carregarComentarios();
-});</script>
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais" required>
+      </div>
+    </div>
+
+    <div class="form-group checkbox">
+      <input type="checkbox" id="termos" required>
+      <label for="termos">Li e concordo com todos os termos.</label>
+    </div>
+
+    <button type="submit" class="adicionar-btn">Próximo</button>
+  </form>
+</section>
 <script>
-function formatarNomeUsuario(emailOuNome) {
+  document.getElementById('avatarUpload').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById('avatarPreview');
 
-  if (emailOuNome.includes('@')) {
-    return emailOuNome.split('@')[0]; 
-  }
-  return emailOuNome; 
-}</script>
-
-  
-  <div class="position-fixed bottom-0 end-0 mb-3 me-3 bg-dark bg-opacity-75 text-white p-3 rounded d-flex align-items-center gap-2">
-    <img src="imagens/pagjogos/classificacao_16.png" alt="Classificação 16 anos" style="width: 40px;" />
-    <p class="mb-0 small">Linguagem Imprópria, Violência</p>
-  </div>
-
-  <script>
-    const stars = document.querySelectorAll('.star');
-    let ratingValue = 0;
-    stars.forEach((star, index) => {
-      star.addEventListener('click', () => {
-        ratingValue = index + 1;
-        updateStars(ratingValue);
-      });
-    });
-    function updateStars(value) {
-      stars.forEach((star, i) => {
-        if (i < value) {
-          star.classList.add('text-warning');
-          star.classList.remove('text-secondary');
-        } else {
-          star.classList.add('text-secondary');
-          star.classList.remove('text-warning');
-        }
-      });
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = '#';
+      preview.style.display = 'none';
     }
-  </script>
-  <script>
-    const imagens = document.querySelectorAll('.gallery img');
-    let imagemAtiva = null;
-  
-    imagens.forEach(function(imagem) {
-      imagem.addEventListener('click', function(event) {
-        event.stopPropagation();
-      
-        if (imagemAtiva && imagemAtiva !== this) {
-          imagemAtiva.classList.remove('zoomed');
-        }
-    
-        this.classList.toggle('zoomed');
-        imagemAtiva = this.classList.contains('zoomed') ? this : null;
-      });
-    });
-  
-    document.addEventListener('click', function() {
-      if (imagemAtiva) {
-        imagemAtiva.classList.remove('zoomed');
-        imagemAtiva = null;
-      }
-    });
-  </script>
+  });
+</script>
+ 
   
   <footer class="bg-black container-fluid a3">
     <div class="footer-container">
