@@ -10,7 +10,7 @@ function login(){
 
     let RegUsuario = JSON.parse(localStorage.getItem("RegistrodeUsuarios"))
 
-    const checarUsuario = RegUsuario.find(p=>p.nome == usuario)
+    const checarUsuario = RegUsuario.find(p=>p.email == usuario)
 
     let userkey = false
     let senhakey = false

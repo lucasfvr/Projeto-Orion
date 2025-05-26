@@ -216,11 +216,11 @@
                 <form>
                   <img src="ico/Orion-logo-desenho.ico" class="mb-4 position-relative top-0 start-50 translate-middle-x" alt="logo" width="100" height="100">
                   <h1 class="h2 mb-3 fw-bold text-center">Fazer Login</h1>
-                  <div class="form-floating">
+                  <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="email" placeholder="your-email@gmail.com"/>
                     <label for="floatingInput">E-mail</label>
                   </div>
-                  <div class="form-floating">
+                  <div class="form-floating mb-3">
                     <input type="password" class="form-control" id="senha" placeholder="password"/>
                     <label for="floatingInput fs-5">Senha</label>
                   </div>
@@ -273,24 +273,48 @@
                 <form>
                   <img src="ico/Orion-logo-desenho.ico" class="mb-4 position-relative top-0 start-50 translate-middle-x" alt="logo" width="100" height="100">
                   <h1 class="h2 mb-3 fw-bold text-center">Criar Conta</h1>
-                  <div class="form-floating">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingName" placeholder="Seu Nome" />
                     <label for="floatingName">Nome</label>
+                    <svg id="okname" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-lg me-3 text-success bg-sucesso-sutil border border-success rounded-2 position-absolute top-50 end-0 translate-middle-y d-none" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                    </svg>
+                    <svg id="noname" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-square text-danger me-3 position-absolute top-50 end-0 translate-middle-y d-none" viewBox="0 0 16 16">
+                      <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
                   </div>
-                  <div class="form-floating">
+                  <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingEmail" placeholder="your-email@gmail.com" />
                     <label for="floatingEmail">E-mail</label>
+                    <svg id="okemail" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-lg me-3 text-success bg-sucesso-sutil border border-success rounded-2 position-absolute top-50 end-0 translate-middle-y d-none" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                    </svg>
+                    <svg id="noemail" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-square text-danger me-3 position-absolute top-50 end-0 translate-middle-y d-none" viewBox="0 0 16 16">
+                      <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
                   </div>
-                  <div class="form-floating">
+                  <div class="form-floating mb-3">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="password" />
                     <label for="floatingPassword">Senha</label>
+                    <svg id="oksenha" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-lg me-3 text-success bg-sucesso-sutil border border-success rounded-2 position-absolute top-50 end-0 translate-middle-y d-none" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                    </svg>
+                    <svg id="nosenha" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-square text-danger me-3 position-absolute top-50 end-0 translate-middle-y d-none" viewBox="0 0 16 16">
+                      <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
                   </div>
                   <div class="form-check text-start my-3 align-items-center">
                     <input type="checkbox" class="form-check-input" id="termsCheck" />
                     <label class="form-check-label fs-5" for="termsCheck">Aceito os Termos e Condições</label>
                   </div>
+                  <div class="erro d-flex justify-content-center d-none">
+                    <p class="mt-1 mb-1 fs-5 text-primary-emphasis">Conta cadastrada com sucesso!</p>
+                  </div>
                   <div class="d-flex justify-content-center mt-5 mb-2">
-                    <button type="button" class="a2 btn btn-primary">CRIAR CONTA</button>
+                    <button type="button" class="a2 btn btn-primary" onclick="cadastro()">CRIAR CONTA</button>
                   </div>
                   <div class="alternative-login">
                     <p class="h4 mb-3 fw-medium text-center">Ou faça login com:</p>
@@ -316,29 +340,29 @@
     Jogos em Destaque Da Semana
   </p>
 
-  <div class="row justify-content-center mt-5 ">
-    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle" style="width: 18rem;">
+  <div class="row justify-content-center mt-5">
+    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle my-3" style="width: 18rem;">
       <img src="imagens/Elden Ring.png" class="card-img-top" alt="...">
       <div class="card-body p-4">
         <h5 class="card-title text-center">ELDEN RING</h5>
         <a href="jogoeldenring.html" class="a1 btn btn-primary d-flex justify-content-center">JOGAR</a>
       </div>
     </div>
-    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle" style="width: 18rem;">
+    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle my-3" style="width: 18rem;">
       <img src="imagens/Black Myth Wukong.jpg" class="card-img-top" alt="...">
       <div class="card-body p-4">
         <h5 class="card-title text-center">BLACK MYTH WUKONG</h5>
         <a href="jogobmwukong.html" class="a1 btn btn-primary d-flex justify-content-center">JOGAR</a>
       </div>
     </div>
-    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle" style="width: 18rem;">
+    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle my-3" style="width: 18rem;">
       <img src="imagens/dragonball.png" class="card-img-top" alt="...">
       <div class="card-body p-4">
         <h5 class="card-title text-center">DRAGON BALL</h5>
         <a href="#" class="a1 btn btn-primary d-flex justify-content-center">JOGAR</a>
       </div>
     </div>
-    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle" style="width: 18rem;">
+    <div class="card p-3 mx-3 bg-primary-subtle border border-primary-subtle my-3" style="width: 18rem;">
       <img src="imagens/cyberpunk.jpg" class="card-img-top" alt="...">
       <div class="card-body p-4">
         <h5 class="card-title text-center">CYBERPUNK 2077</h5>
@@ -402,7 +426,7 @@
 
     <div class="container-fluid w-75">
       <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item border border-primary-subtle">
+        <div class="accordion-item border border-primary-subtle my-3">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed bg-primary-subtle fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
               Jogue em qualquer PC
@@ -412,7 +436,7 @@
             <div class="accordion-body bg-primary-subtle fs-5"> Nosso produto foi projetado e planejado para tornar os jogos mais acessíveis ao público os fazendo rodar em nuvem. Não necessitando de uma hardware potente, somente de uma boa internet.</div>
           </div>
         </div>
-        <div class="accordion-item border border-primary-subtle">
+        <div class="accordion-item border border-primary-subtle my-3">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed bg-primary-subtle fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
               Jogue quando quiser
@@ -422,7 +446,7 @@
             <div class="accordion-body bg-primary-subtle fs-5">Tenha todos os títulos disponíveis prontos para jogar a qualquer momento. </div>
           </div>
         </div>
-        <div class="accordion-item border border-primary-subtle">
+        <div class="accordion-item border border-primary-subtle my-3">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed bg-primary-subtle fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
               Cancele quando quiser
@@ -439,7 +463,7 @@
       <div class=" text-center mb-3" style="width: 25rem;">
         <div class="">
           <p class="">Assine agora e descubra a próxima aventura</p>
-          <a href="#" class="a1 btn btn-primary d-flex justify-content-center">Orion Pass</a>
+          <a href="orionpass.html" class="a1 btn btn-primary d-flex justify-content-center">Orion Pass</a>
         </div>
       </div>
     </div>
