@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de ADM ORION</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="shortcut icon" href="ico/Orion-logo-desenho.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/paineladm.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <span class="navbar-brand">Painel ORION</span>
+  </nav>
+
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link">
+      <img src="imagens/Orion-sem-fundo.png" alt="logo-orion" class="logo-painel elevation-3">
+      <span class="texto-logo font-weight-light">Painel ORION</span>
+    </a>
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+          <li class="nav-item">
+            <a href="#" class="nav-link active" onclick="mostrarSecao('painel-geral')">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Painel Geral</p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link" onclick="mostrarSecao('painel-jogos')">
+              <i class="nav-icon fas fa-gamepad"></i>
+              <p>
+                Jogos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="mostrarSecao('painel-jogos')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Painel de Jogos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="mostrarSecao('form-jogo')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Incluir Jogo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="mostrarSecao('lista-jogos')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listar Jogos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link" onclick="mostrarSecao('painel-usuarios')">
+              <i class="fas fa-users nav-icon"></i>
+              <p>
+                Usuários
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="mostrarSecao('painel-usuarios')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Painel de Usuários</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="mostrarSecao('form-usuario')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Incluir Usuário</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="mostrarSecao('lista-usuarios')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listar Usuários</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Administração do Orion Streaming</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="card card-primary" id="painel-geral-secao" style="display: none;">
+                <div class="card-header">
+                    <h3 class="card-title">Painel Geral de Administração</h3>
+                </div>
+                <div class="card-body">
+                    <p>Bem-vindo ao painel de administração do Orion Streaming. Utilize o menu lateral para navegar entre as seções de gerenciamento de jogos e usuários.</p>
+                    <p class="mb-4">Este painel oferece um resumo rápido dos dados mais importantes do sistema.</p>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3 id="total-jogos-geral">0</h3>
+                                    <p>Total de Jogos Cadastrados</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <a href="#" class="small-box-footer" onclick="mostrarSecao('lista-jogos')">Ver Detalhes <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3 id="total-usuarios-geral">0</h3>
+                                    <p>Total de Usuários Cadastrados</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <a href="#" class="small-box-footer" onclick="mostrarSecao('lista-usuarios')">Ver Detalhes <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-primary" id="painel-jogos-secao" style="display: none;">
+                <div class="card-header">
+                    <h3 class="card-title">Painel de Jogos</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-6">
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3 id="total-jogos">0</h3>
+                                    <p>Total de Jogos Cadastrados</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <a href="#" class="small-box-footer" onclick="mostrarSecao('lista-jogos')">Ver Lista <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Ações Rápidas:</h4>
+                            <button type="button" class="btn btn-success btn-lg mr-2" onclick="mostrarSecao('form-jogo')">
+                                <i class="fas fa-plus-circle"></i> Cadastrar Novo Jogo
+                            </button>
+                            <button type="button" class="btn btn-info btn-lg" onclick="mostrarSecao('lista-jogos')">
+                                <i class="fas fa-list"></i> Ver/Gerenciar Jogos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-primary" id="form-jogo-secao" style="display: none;">
+              <div class="card-header">
+                <h3 class="card-title">Incluir Novo Jogo</h3>
+              </div>
+              <form id="form-jogo">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" id="titulo" placeholder="Título do Jogo" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="genero">Gênero</label>
+                    <input type="text" class="form-control" id="genero" placeholder="Gênero do Jogo" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="desenvolvedora">Desenvolvedora</label>
+                    <input type="text" class="form-control" id="desenvolvedora" placeholder="Desenvolvedora do Jogo" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="ano">Ano de Lançamento</label>
+                    <input type="number" class="form-control" id="ano" placeholder="Ano de Lançamento" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="imagem">Imagem do Jogo</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="imagem" accept="image/*">
+                        <label class="custom-file-label" for="imagem">Escolher arquivo</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Salvar Jogo</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card card-info" id="lista-jogos-secao" style="display: none;">
+              <div class="card-header card-header-with-button">
+                <h3 class="card-title">Jogos Cadastrados</h3>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" onclick="mostrarSecao('form-jogo')">
+                        <i class="fas fa-plus-circle"></i> Novo Jogo
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm ml-2" id="btn-excluir-jogos-selecionados" style="display: none;">
+                        <i class="fas fa-trash"></i> Excluir Selecionados
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm ml-2" onclick="mostrarModalConfirmacao('todos-jogos')">
+                        <i class="fas fa-eraser"></i> Limpar Tudo
+                    </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <ul id="lista-jogos" class="list-group">
+                  </ul>
+              </div>
+            </div>
+
+            <div class="card card-primary" id="painel-usuarios-secao" style="display: none;">
+                <div class="card-header">
+                    <h3 class="card-title">Painel de Usuários</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-6">
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3 id="total-usuarios">0</h3>
+                                    <p>Total de Usuários Cadastrados</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <a href="#" class="small-box-footer" onclick="mostrarSecao('lista-usuarios')">Ver Lista <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Ações Rápidas:</h4>
+                            <button type="button" class="btn btn-success btn-lg mr-2" onclick="mostrarSecao('form-usuario')">
+                                <i class="fas fa-plus-circle"></i> Cadastrar Novo Usuário
+                            </button>
+                            <button type="button" class="btn btn-info btn-lg" onclick="mostrarSecao('lista-usuarios')">
+                                <i class="fas fa-list"></i> Ver/Gerenciar Usuários
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-warning" id="form-usuario-secao" style="display: none;">
+              <div class="card-header">
+                <h3 class="card-title">Incluir Novo Usuário</h3>
+              </div>
+              <form id="form-usuario">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="nome-usuario">Nome</label>
+                    <input type="text" class="form-control" id="nome-usuario" placeholder="Nome Completo" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email-usuario">E-mail</label>
+                    <input type="email" class="form-control" id="email-usuario" placeholder="E-mail" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="senha-usuario">Senha</label>
+                    <input type="password" class="form-control" id="senha-usuario" placeholder="Senha" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="sexo-usuario">Sexo</label>
+                    <select class="form-control" id="sexo-usuario" required>
+                      <option value="">Selecione</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Feminino">Feminino</option>
+                      <option value="Outro">Outro</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="tipo-usuario">Tipo de Usuário</label>
+                    <select class="form-control" id="tipo-usuario" required>
+                      <option value="">Selecione</option>
+                      <option value="Admin">Administrador</option>
+                      <option value="Comum">Comum</option>
+                      <option value="Editor">Editor</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Salvar Usuário</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card card-info" id="lista-usuarios-secao" style="display: none;">
+              <div class="card-header card-header-with-button">
+                <h3 class="card-title">Usuários Cadastrados</h3>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" onclick="mostrarSecao('form-usuario')">
+                        <i class="fas fa-plus-circle"></i> Novo Usuário
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm ml-2" id="btn-excluir-usuarios-selecionados" style="display: none;">
+                        <i class="fas fa-trash"></i> Excluir Selecionados
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm ml-2" onclick="mostrarModalConfirmacao('todos-usuarios')">
+                        <i class="fas fa-eraser"></i> Limpar Todos Usuários
+                    </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <ul id="lista-usuarios" class="list-group">
+                  </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2024 <a href="#">Orion Streaming</a>.</strong> Todos os direitos reservados.
+  </footer>
+</div>
+
+<div class="modal fade" id="modal-detalhes-jogo" tabindex="-1" role="dialog" aria-labelledby="modalDetalhesJogoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalDetalhesJogoLabel">Detalhes do Jogo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="imagem-detalhe-jogo" src="" alt="Imagem do Jogo" class="mb-3">
+        <p><strong>Título:</strong> <span id="titulo-detalhe-jogo"></span></p>
+        <p><strong>Gênero:</strong> <span id="genero-detalhe-jogo"></span></p>
+        <p><strong>Desenvolvedora:</strong> <span id="desenvolvedora-detalhe-jogo"></span></p>
+        <p><strong>Ano de Lançamento:</strong> <span id="ano-detalhe-jogo"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info mr-auto" id="btn-ampliar-imagem">
+            <i class="fas fa-search-plus"></i> Ampliar Imagem
+        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-detalhes-usuario" tabindex="-1" role="dialog" aria-labelledby="modalDetalhesUsuarioLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalDetalhesUsuarioLabel">Detalhes do Usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Nome:</strong> <span id="nome-detalhe-usuario"></span></p>
+        <p><strong>E-mail:</strong> <span id="email-detalhe-usuario"></span></p>
+        <p><strong>Sexo:</strong> <span id="sexo-detalhe-usuario"></span></p>
+        <p><strong>Tipo de Usuário:</strong> <span id="tipo-detalhe-usuario"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-confirmacao" tabindex="-1" role="dialog" aria-labelledby="modalConfirmacaoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalConfirmacaoLabel"><i class="fas fa-exclamation-triangle mr-2"></i> Confirmação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="corpo-modal-confirmacao">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-danger" id="btn-acao-confirmacao">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-sucesso" tabindex="-1" role="dialog" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalSucessoLabel"><i class="fas fa-check-circle mr-2"></i> Sucesso!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="corpo-modal-sucesso">
+        <i class="fas fa-check-circle mb-3"></i><br>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-visualizador-imagem" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <img id="imagem-ampliada" src="" alt="Imagem Ampliada">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+<script src="js/paineladm.js"></script>
+</body>
+</html>
