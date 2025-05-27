@@ -20,14 +20,15 @@ addEventListener("DOMContentLoaded", function() {
 // Metodo para mudar perfil logado
 
 function mudarftperfil(){
-  const PerfilHyan  = document.querySelector(".perfilHyan")
 
   let imgArmazenada = JSON.parse(localStorage.getItem("profiles"))
-  let perfilhyan  = document.querySelector(".imgperfil")
+  let perfilhyannav  = document.querySelector(".imgperfilnav")
+  let perfilhyanmenu  = document.querySelector(".imgperfilmenu")
+
   let checarimg = imgArmazenada.find(p=>p.name == "Hyan")
 
-    perfilhyan.innerHTML = `<img id="imgperfil" src="${checarimg.img}" alt="" width="50" height="50" style="border-radius: 50%;">`
-    console.log(checarimg);
+    perfilhyannav.innerHTML = `<img id="imgperfil" src="${checarimg.img}" alt="" width="50" height="50" style="border-radius: 50%;">`
+    perfilhyanmenu.innerHTML = `<img id="imgperfil" src="${checarimg.img}" alt="" width="50" height="50" style="border-radius: 50%;"> ${checarimg.name}`
+    console.log(checarimg.img);
   
-  }
-  mudarftperfil()
+}
