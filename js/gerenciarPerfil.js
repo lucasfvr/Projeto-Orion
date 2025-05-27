@@ -1,3 +1,20 @@
+function inicialização(){
+  const ObjUsuarios = [
+    { name: 'Lucas', img: 'imagens/iconlogin5.png' },
+    { name: 'Kauã', img: 'imagens/iconlogin4.jpeg' },
+    { name: 'Hyan', img: 'imagens/iconlogin2.jpg' },
+    { name: 'Victor', img: 'imagens/iconlogin3.png' },
+    { name: 'Gésio', img: 'imagens/iconlogin.jpg' },
+  ]
+
+  const UserReg = localStorage.getItem("profiles")
+
+  if(!UserReg){
+      localStorage.setItem("profiles", JSON.stringify(ObjUsuarios)
+  )}
+}
+inicialização()
+
 document.addEventListener('DOMContentLoaded', () => {
   const defaultProfiles = [
     { name: 'Lucas', img: 'imagens/iconlogin5.png' },
@@ -18,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (e) {
         profiles = [...defaultProfiles];
       }
-    } else {
-      profiles = [...defaultProfiles];
     }
   }
 
