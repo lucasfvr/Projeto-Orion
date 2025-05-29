@@ -10,50 +10,46 @@
   <link href="css/escolhaoperfil.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="d-flex justify-content-center align-items-center min-vh-100 text-center">
+  <div class="d-flex justify-content-center align-items-center min-vh-100 text-center text-white">
     <div class="container">
       <h1 class="mb-5">Quem vai Jogar?</h1>
 
       <div class="row justify-content-center g-4 mb-5" id="profileList">
-
+        <!-- Perfis fixos -->
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-index="0">
-          <a href="" class=" text-decoration-none text-white">
+          <a href="biblioteca.html" class="text-decoration-none text-white">
             <div class="player">
               <img src="imagens/iconlogin5.png" alt="Lucas" class="avatar img-fluid" />
               <p>Lucas</p>
             </div>
           </a>
         </div>
-
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-index="1">
-          <a href="" class="text-decoration-none text-white">
+          <a href="biblioteca.html" class="text-decoration-none text-white">
             <div class="player">
               <img src="imagens/iconlogin4.jpeg" alt="Kauã" class="avatar img-fluid" />
               <p>Kauã</p>
             </div>
           </a>
         </div>
-
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-index="2">
-          <a href=""  class="text-decoration-none text-white">
+          <a href="biblioteca.html" class="text-decoration-none text-white">
             <div class="player">
               <img src="imagens/iconlogin2.jpg" alt="Hyan" class="avatar img-fluid" />
               <p>Hyan</p>
             </div>
           </a>
         </div>
-
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-index="3">
-          <a href="" class="text-decoration-none text-white">
+          <a href="biblioteca.html" class="text-decoration-none text-white">
             <div class="player">
               <img src="imagens/iconlogin3.png" alt="Victor" class="avatar img-fluid" />
               <p>Victor</p>
             </div>
           </a>
         </div>
-
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-index="4">
-          <a href="" class="text-decoration-none text-white">
+          <a href="biblioteca.html" class="text-decoration-none text-white">
             <div class="player">
               <img src="imagens/iconlogin.jpg" alt="Gésio" class="avatar img-fluid" />
               <p>Gésio</p>
@@ -66,7 +62,7 @@
     </div>
   </div>
 
-
+  <!-- Modal Gerenciar Perfil -->
   <div
     class="modal fade"
     id="manageProfileModal"
@@ -75,9 +71,9 @@
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content bg-dark text-white">
-        <div class="modal-header">
-          <h5 class="modal-title" id="manageProfileModalLabel">Gerenciar Perfis</h5>
+      <div class="modal-content bg-dark text-white rounded-3 shadow">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fs-4" id="manageProfileModalLabel">Gerenciar Perfis</h5>
           <button
             type="button"
             class="btn-close btn-close-white"
@@ -87,15 +83,16 @@
         </div>
         <div class="modal-body d-flex gap-4">
 
+          <!-- Lista de Perfis -->
           <div
             id="editProfileList"
             class="d-flex flex-column gap-3 overflow-auto"
             style="width: 40%; max-height: 400px;"
           ></div>
 
-
+          <!-- Formulário de edição -->
           <div style="width: 60%;">
-            <form id="editProfileForm" class="text-start">
+            <form id="editProfileForm" class="text-start text-white" novalidate>
               <div class="mb-3 text-center">
                 <img
                   id="editProfileImagePreview"
@@ -111,33 +108,40 @@
                 <input
                   type="text"
                   id="editProfileName"
-                  class="form-control"
+                  class="form-control text-dark"
                   required
+                  minlength="2"
+                  maxlength="30"
                 />
               </div>
 
               <div class="mb-3">
-                <label for="editProfileImage" class="form-label"
-                  >Escolha nova imagem</label
-                >
+                <label for="editProfileImage" class="form-label">Escolha nova imagem</label>
                 <input
                   type="file"
                   id="editProfileImage"
-                  class="form-control"
+                  class="form-control text-dark"
                   accept="image/*"
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary w-100">Salvar Alterações</button>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary px-4 py-2 fw-bold rounded-pill">
+                  Salvar Alterações
+                </button>
+              </div>
             </form>
           </div>
+
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/gerenciarPerfil.js"></script>
-  <script src="js/contalogada.js"></script>
+  <script src="gerenciarPerfil.js"></script>
 </body>
 </html>
