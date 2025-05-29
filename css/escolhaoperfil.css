@@ -1,9 +1,10 @@
 body {
-  font-family: 'JetBrains Mono', monospace;
   background-color: #00071C;
-  background-size: cover;
+  font-family: 'JetBrains Mono', monospace;
   color: white;
   margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 h1 {
@@ -39,6 +40,7 @@ h1 {
   margin-top: 10px;
   font-size: 1.4rem;
   text-shadow: 1px 1px 4px black;
+  color: #fff;
 }
 
 .btn-primary {
@@ -56,10 +58,11 @@ h1 {
   transform: scale(1.05);
 }
 
-
 #editProfileList {
   border-right: 1px solid #007bff;
   padding-right: 15px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .edit-profile-item {
@@ -70,6 +73,7 @@ h1 {
   padding: 8px 12px;
   border-radius: 8px;
   transition: background-color 0.2s ease;
+  user-select: none;
 }
 
 .edit-profile-item:hover,
@@ -90,5 +94,40 @@ h1 {
   margin: 0;
   font-weight: 700;
   font-size: 1rem;
-  user-select: none;
+}
+
+.edit-profile-item .delete-btn {
+  margin-left: auto;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+#editProfileForm label {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+#editProfileForm input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid #007bff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+}
+
+#editProfileImagePreview {
+  margin-top: 15px;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 170, 255, 0.7);
+  border: 2px solid #00AAFF;
+}
+
+#editProfileForm > div.d-flex.justify-content-center {
+  margin-top: 20px;
 }
