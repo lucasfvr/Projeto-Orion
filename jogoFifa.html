@@ -55,12 +55,12 @@
           <button class="btn btn-outline-primary" type="submit">Buscar</button>
           <div class="perfilnav perfil dropdown d-none">
             <a class="imgperfilnav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Minha Lista">
-              <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="40" height="40" style="border-radius: 50%;">
+              <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="60" height="60" style="border-radius: 50%;">
             </a>
             <ul class="dropdown-menu" style="position: absolute; inset: 0px 0px auto auto; margin-top: 20px; transform: translate(0px, 34px);">
               <li><a class="dropdown-item" href="escolhaoperfil.html">Perfil</a></li>
               <li><a class="dropdown-item" href="minhalista.html">Minha lista</a></li>
-              <li><a onclick="logout()" class="dropdown-item" href="#">Sair</a></li>
+              <li><a onclick="dialog()" class="dropdown-item" href="#">Sair</a></li>
             </ul>
           </div>
         </form>
@@ -84,7 +84,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="escolhaoperfil.html">Perfil</a></li>
                 <li><a class="dropdown-item" href="minhalista.html">Minha Lista</a></li>
-                <li><a onclick="logout()" class="dropdown-item" href="#">Sair</a></li>
+                <li><a onclick="dialog()" class="dropdown-item" href="#">Sair</a></li>
               </ul>
           </li>
             <li class="nav-item">
@@ -176,6 +176,27 @@
     </div>
   </div>
 </div>
+
+<dialog class="dialog">  
+  <div class="card text-center alert alert-secondary rounded-5">
+    <div class="card-body">
+      <p class="card-text fs-2">Já vai? A masmorra final ainda nem foi explorada! Tem certeza que quer sair??</p>
+      <hr>
+        <button href="#" onclick="logout()" class="btn btn-danger fs-4 me-3 mostrarDialogBtn">Sair</button>
+        <button href="#" onclick="closeDialog()" class="btn btn-secondary fs-4 ms-3">Cancelar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="dialog1">  
+  <div class="card text-center alert alert-secondary rounded-5">
+    <div class="card-body">
+      <p class="card-text fs-2">Desativando propulsores. A nave aguarda suas coordenadas para a próxima missão intergaláctica. Volte em breve, Comandante!</p>
+      <p></p>
+    </div>
+  </div>
+</dialog>
+
 <script>document.addEventListener('DOMContentLoaded', function() {
   const enviarBtn = document.getElementById('enviar-comentario');
   const comentarioTexto = document.getElementById('comentario-texto');
@@ -426,5 +447,6 @@ function formatarNomeUsuario(emailOuNome) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/contalogada.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/logout.js"></script>
 </body>
 </html>

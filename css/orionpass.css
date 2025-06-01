@@ -1,3 +1,14 @@
+.dialog{
+  width: 50%;
+  border: none;
+  background: none;
+}
+.dialog1{
+  width: 50%;
+  border: none;
+  background: none;
+}
+
 body {
   margin: 0;
   font-family: 'JetBrains Mono', monospace;

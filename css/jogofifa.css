@@ -1,3 +1,14 @@
+.dialog{
+  width: 50%;
+  border: none;
+  background: none;
+}
+.dialog1{
+  width: 50%;
+  border: none;
+  background: none;
+}
+
 .offcanvas{
   background-color: #00071C;
 }

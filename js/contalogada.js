@@ -25,10 +25,10 @@ function mudarftperfil(){
   let perfilhyannav  = document.querySelector(".imgperfilnav")
   let perfilhyanmenu  = document.querySelector(".imgperfilmenu")
 
-  let checarimg = imgArmazenada.find(p=>p.name == "Hyan")
+  let checarimg = imgArmazenada.find(p=>p.name == "Lucas")
 
-    perfilhyannav.innerHTML = `<img id="imgperfil" src="${checarimg.img}" alt="" width="50" height="50" style="border-radius: 50%;">`
-    perfilhyanmenu.innerHTML = `<img id="imgperfil" src="${checarimg.img}" alt="" width="50" height="50" style="border-radius: 50%;"> ${checarimg.name}`
-    console.log(checarimg.img);
+    perfilhyannav.innerHTML = `<img id="imgperfil" src="${checarimg.img}" alt="" width="65" height="65" style="border-radius: 50%; ">`
+    perfilhyanmenu.innerHTML = `<img id="imgperfil" src="${checarimg.img}" alt="" width="65" height="65" style="border-radius: 50%;"> ${checarimg.name}`
   
 }
+addEventListener("DOMContentLoaded",  mudarftperfil())
