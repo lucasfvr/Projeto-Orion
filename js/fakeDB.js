@@ -113,6 +113,7 @@ function cadastro(){
 
     if(validNome() && valiEmail() && validSenha()){
         MsgErro.classList.remove("d-none")
+        MsgErro.innerHTML = ``
         adicionarUser()
         localStorage.setItem("RegistrodeUsuarios", JSON.stringify(ObjUsuarios))
     }

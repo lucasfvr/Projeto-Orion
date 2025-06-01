@@ -34,8 +34,8 @@ function login(){
             senha: senha,
         }));
 
-    console.log(senhakey)
-    console.log(userkey)
+        console.log(senhakey)
+        console.log(userkey)
 
         LoginErro.innerHTML = ` `
         loginRealizado.classList.remove("d-none")
@@ -43,6 +43,7 @@ function login(){
         Perfilnav.classList.remove("d-none")
         OcultarBtnLogin.classList.add('d-none')
         OcultarBtnLogout.classList.add('d-none')
+        window.location.href = "biblioteca.html"
     }    
 }
 
