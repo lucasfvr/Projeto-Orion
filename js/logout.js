@@ -16,6 +16,8 @@ function logout(){
   setTimeout(() => {
     closeDialog1()
   }, timeout = 4000);
+
+  window.location.reload()
 }
 
 function verificaUsuarioLogado(){
