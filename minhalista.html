@@ -127,6 +127,55 @@
   <main>
 
     <h3>MINHA LISTA</h3>
+    <button type="button" class="a1 btn btn-primary text-center mx-5 fs-5 position-absolute top-1 end-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
+        <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z"/>
+      </svg> Filtro
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Filtro</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <select class="form-select my-4 d-flex text-center fs-4" aria-label="Default select example">
+              <option selected>Categoria:</option>
+              <option value="1">FPS</option>
+              <option value="2">Ação</option>
+              <option value="3">Esportes</option>
+              <option value="4">Aventura</option>
+            </select>
+            <select class="form-select my-4 d-flex text-center fs-4" aria-label="Default select example">
+              <option selected>Classificação Etária:</option>
+              <option value="1">Livre</option>
+              <option value="2">10+ anos</option>
+              <option value="3">15+ anos</option>
+              <option value="4">18+ anos</option>
+            </select>
+            <select class="form-select my-4 d-flex text-center fs-4" aria-label="Default select example">
+              <option selected>Jogadores:</option>
+              <option value="1">Singleplayer</option>
+              <option value="2">Multplayer</option>
+            </select>
+            <select class="form-select my-4 d-flex text-center fs-4" aria-label="Default select example">
+              <option selected>Distribuidora:</option>
+              <option value="1">Rockstar</option>
+              <option value="2">Annapurna</option>
+              <option value="3">Square Enix</option>
+              <option value="4">FromSoftware</option>
+              <option value="5">EA</option>
+            </select>
+          </div>
+          <div class="modal-footer d-flex justify-content-evenly">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Salvar mudanças</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="row justify-content-around mt-5 ">
       <div class="mb-5" style="width: 18rem;">
