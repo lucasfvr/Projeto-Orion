@@ -141,6 +141,26 @@
     </div>
   </div>
 
+  <div class="text-center mt-4">
+  <button class="btn btn-outline-danger" onclick="openDeleteDialog()">Apagar Perfil</button>
+</div>
+
+
+<dialog id="dialog-delete-profile" class="dialog-delete-profile">
+  <div class="card text-center alert alert-secondary rounded-5">
+    <div class="card-body">
+      <p class="card-text fs-3">
+        Deseja mesmo apagar este perfil? Seus dados serão perdidos no vácuo estelar!
+      </p>
+      <hr>
+      <div class="d-flex justify-content-center">
+        <button id="confirmDeleteBtn" class="btn btn-danger fs-5 me-3">Apagar</button>
+        <button onclick="closeDeleteDialog()" class="btn btn-secondary fs-5 ms-3">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/gerenciarPerfil.js"></script>
 </body>
