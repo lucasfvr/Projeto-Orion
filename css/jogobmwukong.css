@@ -1,3 +1,14 @@
+.dialog{
+  width: 50%;
+  border: none;
+  background: none;
+}
+.dialog1{
+  width: 50%;
+  border: none;
+  background: none;
+}
+
 .offcanvas{
   background-color: #00071C;
 }
@@ -311,4 +322,52 @@ body {
   transform: scale(1.5);
   z-index: 1000;
   position: relative;
+}
+
+.excluir-comentario:hover {
+  transform: scale(1.05);
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.bi-trash {
+  margin-right: 5px;
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 80px; 
+  right: 20px;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background-color: #00071C; 
+  color: #00AAFF;            
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 170, 255, 0.6);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 280px;
+}
+
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
 }

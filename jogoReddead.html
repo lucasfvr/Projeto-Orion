@@ -148,80 +148,236 @@
       <div class="col-12 col-md-5">
         <p class="texto-grande"><strong></strong> Red Dead Redemption 2, a épica aventura de mundo aberto da Rockstar Games aclamada pela crítica e o jogo mais bem avaliado desta geração de consoles, agora chega aprimorado para PC com conteúdos inéditos no Modo História, melhorias visuais e muito mais.</p>
       
-        <div class="mt-4">
+       <div class="mt-4">
           <a href="#" class="a1">JOGAR</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="main-content">
-    <div class="container my-4">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8">
-          <textarea id="comentarios" class="form-control mb-2" rows="6" placeholder="Escreva seu comentário..."></textarea>
-          <div class="d-flex justify-content-between align-items-center mt-1">
-            <div>
-              <button class="adicionar-btn">Adicionar</button>
-            </div>
-            <div class="rating text-end">
-              <span class="star" data-value="1">&#9733;</span>
-              <span class="star" data-value="2">&#9733;</span>
-              <span class="star" data-value="3">&#9733;</span>
-              <span class="star" data-value="4">&#9733;</span>
-              <span class="star" data-value="5">&#9733;</span>
-            </div>
-          </div>
+  <div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div id="comentarios-container" class="mb-4">
+      </div>
+      <textarea id="comentario-texto" class="form-control mb-2" rows="6" placeholder="Escreva seu comentário..."></textarea>
+      <div class="d-flex justify-content-between align-items-center mt-1">
+        <div>
+          <button id="enviar-comentario" class="adicionar-btn">Enviar</button>
+        </div>
+        <div class="rating text-end">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
         </div>
       </div>
     </div>
   </div>
-  
-  <div class="position-fixed bottom-0 end-0 mb-3 me-3 bg-dark bg-opacity-75 text-white p-3 rounded d-flex align-items-center gap-2">
-    <img src="imagens/pagjogos/classificacao_16.png" alt="Classificação 16 anos" style="width: 40px;" />
-    <p class="mb-0 small">Linguagem Imprópria, Violência</p>
+</div>
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white border-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmação</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja excluir este comentário?
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Excluir</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
   </div>
+</div>
 
-  <dialog class="dialog">  
-    <div class="card text-center alert alert-secondary rounded-5">
-      <div class="card-body">
-        <p class="card-text fs-2">Já vai? A masmorra final ainda nem foi explorada! Tem certeza que quer sair??</p>
-        <hr>
-          <button href="#" onclick="logout()" class="btn btn-danger fs-4 me-3 mostrarDialogBtn">Sair</button>
-          <button href="#" onclick="closeDialog()" class="btn btn-secondary fs-4 ms-3">Cancelar</button>
-      </div>
-    </div>
-  </dialog>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const enviarBtn = document.getElementById('enviar-comentario');
+  const comentarioTexto = document.getElementById('comentario-texto');
+  const comentariosContainer = document.getElementById('comentarios-container');
+  const stars = document.querySelectorAll('.star');
 
-  <dialog class="dialog1">  
-    <div class="card text-center alert alert-secondary rounded-5">
-      <div class="card-body">
-        <p class="card-text fs-2">Desativando propulsores. A nave aguarda suas coordenadas para a próxima missão intergaláctica. Volte em breve, Comandante!</p>
-        <p></p>
-      </div>
-    </div>
-  </dialog>
+  let comentarioParaExcluir = null;
+  let ratingValue = 0;
 
-  <script>
-    const stars = document.querySelectorAll('.star');
-    let ratingValue = 0;
-    stars.forEach((star, index) => {
-      star.addEventListener('click', () => {
-        ratingValue = index + 1;
-        updateStars(ratingValue);
+  function usuarioLogado() {
+    return JSON.parse(localStorage.getItem('UsuarioLogado'));
+  }
+
+  function isAdmin() {
+    const user = usuarioLogado();
+    return user && user.isAdmin === true;
+  }
+
+  function formatarData(dataString) {
+    const data = new Date(dataString);
+    return data.toLocaleDateString('pt-BR') + ' às ' + data.toLocaleTimeString('pt-BR');
+  }
+
+  function formatarNomeUsuario(emailOuNome) {
+    if (emailOuNome.includes('@')) {
+      return emailOuNome.split('@')[0];
+    }
+    return emailOuNome;
+  }
+
+  // Atualiza visual das estrelas (para avaliação no envio)
+  function updateStars(value) {
+    stars.forEach((star, i) => {
+      if (i < value) {
+        star.classList.add('selected');
+        star.classList.add('text-warning');
+        star.classList.remove('text-secondary');
+      } else {
+        star.classList.remove('selected');
+        star.classList.remove('text-warning');
+        star.classList.add('text-secondary');
+      }
+    });
+  }
+
+  function carregarComentarios() {
+    const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
+    comentariosContainer.innerHTML = '';
+
+    const usuarioAtual = usuarioLogado();
+
+    comentarios.forEach((comentario, index) => {
+      const podeExcluir = usuarioAtual &&
+                         (usuarioAtual.usuario === comentario.usuario || isAdmin());
+
+      const comentarioHTML = `
+        <div class="card mb-3 bg-dark bg-opacity-50 border-light" data-id="${index}">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title text-primary">${formatarNomeUsuario(comentario.usuario)}</h5>
+              ${podeExcluir ? 
+                `<button class="btn btn-sm btn-danger excluir-comentario" data-id="${index}">
+                  <i class="bi bi-trash"></i> Excluir
+                </button>` : ''
+              }
+            </div>
+            <p class="card-text">${comentario.texto}</p>
+            <div class="text-warning mb-2">
+              ${'★'.repeat(comentario.avaliacao)}${'☆'.repeat(5 - comentario.avaliacao)}
+            </div>
+            <small class="text-muted">${formatarData(comentario.data)}</small>
+          </div>
+        </div>
+      `;
+      comentariosContainer.innerHTML += comentarioHTML;
+    });
+
+    // Ativa eventos dos botões excluir
+    document.querySelectorAll('.excluir-comentario').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const id = parseInt(this.getAttribute('data-id'));
+        excluirComentario(id);
       });
     });
-    function updateStars(value) {
-      stars.forEach((star, i) => {
-        if (i < value) {
-          star.classList.add('text-warning');
-          star.classList.remove('text-secondary');
-        } else {
-          star.classList.add('text-secondary');
-          star.classList.remove('text-warning');
-        }
-      });
+  }
+
+  function excluirComentario(id) {
+    comentarioParaExcluir = id;
+    const deleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+    deleteModal.show();
+  }
+
+  document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+    if (comentarioParaExcluir !== null) {
+      const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
+      comentarios.splice(comentarioParaExcluir, 1);
+      localStorage.setItem('ComentariosFC25', JSON.stringify(comentarios));
+      carregarComentarios();
+
+      comentarioParaExcluir = null;
+
+      const deleteModalEl = document.getElementById('confirmDeleteModal');
+      const modalInstance = bootstrap.Modal.getInstance(deleteModalEl) || new bootstrap.Modal(deleteModalEl);
+      modalInstance.hide();
     }
-  </script>
+  });
+
+  // Eventos das estrelas para avaliação
+  stars.forEach((star, index) => {
+    star.addEventListener('click', function() {
+      ratingValue = index + 1;
+      updateStars(ratingValue);
+      mostrarToast(`Você avaliou com ${ratingValue} estrela(s)!`);
+    });
+  });
+
+  enviarBtn.addEventListener('click', function() {
+    const usuario = usuarioLogado();
+    if (!usuario) {
+      mostrarToast('Você precisa estar logado para comentar!');
+      return;
+    }
+
+    const texto = comentarioTexto.value.trim();
+    if (!texto) {
+      mostrarToast('Por favor, escreva um comentário!');
+      return;
+    }
+
+    if (ratingValue === 0) {
+      mostrarToast('Por favor, avalie o jogo!');
+      return;
+    }
+
+    const novoComentario = {
+      usuario: usuario.usuario,
+      texto: texto,
+      avaliacao: ratingValue,
+      data: new Date().toISOString()
+    };
+
+    const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
+    comentarios.unshift(novoComentario);
+    localStorage.setItem('ComentariosFC25', JSON.stringify(comentarios));
+
+    carregarComentarios();
+    comentarioTexto.value = '';
+    ratingValue = 0;
+    updateStars(0); 
+  });
+
+  carregarComentarios();
+});
+
+// Função para mostrar toast (mensagens temporárias)
+function mostrarToast(mensagem) {
+  let container = document.querySelector('.toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.classList.add('toast-container');
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.textContent = mensagem;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 100);
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+</script>
+
+
+
+
+
   <script>
     const imagens = document.querySelectorAll('.gallery img');
     let imagemAtiva = null;
@@ -304,6 +460,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/contalogada.js"></script>
   <script src="js/login.js"></script>
-  <script src="js/logout.js"></script>
+
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100">
+  <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toast-body">
+        <!-- Mensagem será inserida aqui via JS -->
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
+

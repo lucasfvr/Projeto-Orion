@@ -54,13 +54,13 @@
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
           <button class="btn btn-outline-primary" type="submit">Buscar</button>
           <div class="perfilnav perfil dropdown d-none">
-            <a class="imgperfilnav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Minha Lista">
-              <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="60" height="60" style="border-radius: 50%;">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Notificações">
+              <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="40" height="40" style="border-radius: 50%;">
             </a>
             <ul class="dropdown-menu" style="position: absolute; inset: 0px 0px auto auto; margin-top: 20px; transform: translate(0px, 34px);">
               <li><a class="dropdown-item" href="escolhaoperfil.html">Perfil</a></li>
               <li><a class="dropdown-item" href="minhalista.html">Minha lista</a></li>
-              <li><a onclick="dialog()" class="dropdown-item" href="#">Sair</a></li>
+              <li><a onclick="logout()" class="dropdown-item" href="#">Sair</a></li>
             </ul>
           </div>
         </form>
@@ -77,14 +77,14 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="perfilDrop d-none">
-              <a class="imgperfilmenu nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Minha Lista">
-                <img id="#imgperfil" src="imagens/iconlogin5.png" alt="" width="50" height="50" style="border-radius: 50%;">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" title="Perfil e Notificações">
+                <img id="#imgperfil" src="imagens/iconlogin5.png" alt="Lucas" width="50" height="50" style="border-radius: 50%;">
                 Perfil
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="escolhaoperfil.html">Perfil</a></li>
                 <li><a class="dropdown-item" href="minhalista.html">Minha Lista</a></li>
-                <li><a onclick="dialog()" class="dropdown-item" href="#">Sair</a></li>
+                <li><a onclick="logout()" class="dropdown-item" href="#">Sair</a></li>
               </ul>
           </li>
             <li class="nav-item">
@@ -154,8 +154,7 @@
       </div>
     </div>
   </div>
-  <div class="main-content">
-<div class="container my-4">
+  <div class="container my-4">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
       <div id="comentarios-container" class="mb-4">
@@ -176,195 +175,209 @@
     </div>
   </div>
 </div>
-
-<dialog class="dialog">  
-  <div class="card text-center alert alert-secondary rounded-5">
-    <div class="card-body">
-      <p class="card-text fs-2">Já vai? A masmorra final ainda nem foi explorada! Tem certeza que quer sair??</p>
-      <hr>
-        <button href="#" onclick="logout()" class="btn btn-danger fs-4 me-3 mostrarDialogBtn">Sair</button>
-        <button href="#" onclick="closeDialog()" class="btn btn-secondary fs-4 ms-3">Cancelar</button>
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white border-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmação</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja excluir este comentário?
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Excluir</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
     </div>
   </div>
-</dialog>
+</div>
 
-<dialog class="dialog1">  
-  <div class="card text-center alert alert-secondary rounded-5">
-    <div class="card-body">
-      <p class="card-text fs-2">Desativando propulsores. A nave aguarda suas coordenadas para a próxima missão intergaláctica. Volte em breve, Comandante!</p>
-      <p></p>
-    </div>
-  </div>
-</dialog>
-
-<script>document.addEventListener('DOMContentLoaded', function() {
+<script>
+document.addEventListener('DOMContentLoaded', function() {
   const enviarBtn = document.getElementById('enviar-comentario');
   const comentarioTexto = document.getElementById('comentario-texto');
   const comentariosContainer = document.getElementById('comentarios-container');
-  
+  const stars = document.querySelectorAll('.star');
+
+  let comentarioParaExcluir = null;
+  let ratingValue = 0;
+
   function usuarioLogado() {
     return JSON.parse(localStorage.getItem('UsuarioLogado'));
   }
-  
 
   function isAdmin() {
     const user = usuarioLogado();
     return user && user.isAdmin === true;
   }
-  
 
   function formatarData(dataString) {
     const data = new Date(dataString);
     return data.toLocaleDateString('pt-BR') + ' às ' + data.toLocaleTimeString('pt-BR');
   }
-  
-  function carregarComentarios() {
-  const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
-  comentariosContainer.innerHTML = '';
-  
-  const usuarioAtual = usuarioLogado();
-  
-  comentarios.forEach((comentario, index) => {
-    const podeExcluir = usuarioAtual && 
-                       (usuarioAtual.usuario === comentario.usuario || isAdmin());
-    
-    const comentarioHTML = `
-      <div class="card mb-3 bg-dark bg-opacity-50 border-light" data-id="${index}">
-        <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <h5 class="card-title text-primary">${formatarNomeUsuario(comentario.usuario)}</h5>
-            ${podeExcluir ? 
-              `<button class="btn btn-sm btn-danger excluir-comentario" data-id="${index}">
-                <i class="bi bi-trash"></i> Excluir
-              </button>` : ''
-            }
-          </div>
-          <p class="card-text">${comentario.texto}</p>
-          <div class="text-warning mb-2">
-            ${'★'.repeat(comentario.avaliacao)}${'☆'.repeat(5 - comentario.avaliacao)}
-          </div>
-          <small class="text-muted">${formatarData(comentario.data)}</small>
-        </div>
-      </div>
-    `;
-    comentariosContainer.innerHTML += comentarioHTML;
-  });
-  
-  document.querySelectorAll('.excluir-comentario').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const id = parseInt(this.getAttribute('data-id'));
-      excluirComentario(id);
+
+  function formatarNomeUsuario(emailOuNome) {
+    if (emailOuNome.includes('@')) {
+      return emailOuNome.split('@')[0];
+    }
+    return emailOuNome;
+  }
+
+  // Atualiza visual das estrelas (para avaliação no envio)
+  function updateStars(value) {
+    stars.forEach((star, i) => {
+      if (i < value) {
+        star.classList.add('selected');
+        star.classList.add('text-warning');
+        star.classList.remove('text-secondary');
+      } else {
+        star.classList.remove('selected');
+        star.classList.remove('text-warning');
+        star.classList.add('text-secondary');
+      }
     });
-  });
-}
-  
+  }
+
+  function carregarComentarios() {
+    const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
+    comentariosContainer.innerHTML = '';
+
+    const usuarioAtual = usuarioLogado();
+
+    comentarios.forEach((comentario, index) => {
+      const podeExcluir = usuarioAtual &&
+                         (usuarioAtual.usuario === comentario.usuario || isAdmin());
+
+      const comentarioHTML = `
+        <div class="card mb-3 bg-dark bg-opacity-50 border-light" data-id="${index}">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title text-primary">${formatarNomeUsuario(comentario.usuario)}</h5>
+              ${podeExcluir ? 
+                `<button class="btn btn-sm btn-danger excluir-comentario" data-id="${index}">
+                  <i class="bi bi-trash"></i> Excluir
+                </button>` : ''
+              }
+            </div>
+            <p class="card-text">${comentario.texto}</p>
+            <div class="text-warning mb-2">
+              ${'★'.repeat(comentario.avaliacao)}${'☆'.repeat(5 - comentario.avaliacao)}
+            </div>
+            <small class="text-muted">${formatarData(comentario.data)}</small>
+          </div>
+        </div>
+      `;
+      comentariosContainer.innerHTML += comentarioHTML;
+    });
+
+    // Ativa eventos dos botões excluir
+    document.querySelectorAll('.excluir-comentario').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const id = parseInt(this.getAttribute('data-id'));
+        excluirComentario(id);
+      });
+    });
+  }
 
   function excluirComentario(id) {
-    if (!confirm('Tem certeza que deseja excluir este comentário?')) return;
-    
-    const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
-    comentarios.splice(id, 1);
-    localStorage.setItem('ComentariosFC25', JSON.stringify(comentarios));
-    carregarComentarios();
+    comentarioParaExcluir = id;
+    const deleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+    deleteModal.show();
   }
-  
+
+  document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+    if (comentarioParaExcluir !== null) {
+      const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
+      comentarios.splice(comentarioParaExcluir, 1);
+      localStorage.setItem('ComentariosFC25', JSON.stringify(comentarios));
+      carregarComentarios();
+
+      comentarioParaExcluir = null;
+
+      const deleteModalEl = document.getElementById('confirmDeleteModal');
+      const modalInstance = bootstrap.Modal.getInstance(deleteModalEl) || new bootstrap.Modal(deleteModalEl);
+      modalInstance.hide();
+    }
+  });
+
+  // Eventos das estrelas para avaliação
+  stars.forEach((star, index) => {
+    star.addEventListener('click', function() {
+      ratingValue = index + 1;
+      updateStars(ratingValue);
+      mostrarToast(`Você avaliou com ${ratingValue} estrela(s)!`);
+    });
+  });
 
   enviarBtn.addEventListener('click', function() {
     const usuario = usuarioLogado();
     if (!usuario) {
-      alert('Você precisa estar logado para comentar!');
+      mostrarToast('Você precisa estar logado para comentar!');
       return;
     }
-    
+
     const texto = comentarioTexto.value.trim();
     if (!texto) {
-      alert('Por favor, escreva um comentário!');
+      mostrarToast('Por favor, escreva um comentário!');
       return;
     }
-    
-    const estrelasSelecionadas = document.querySelectorAll('.star.selected').length;
-    if (estrelasSelecionadas === 0) {
-      alert('Por favor, avalie o jogo!');
+
+    if (ratingValue === 0) {
+      mostrarToast('Por favor, avalie o jogo!');
       return;
     }
-    
+
     const novoComentario = {
       usuario: usuario.usuario,
       texto: texto,
-      avaliacao: estrelasSelecionadas,
+      avaliacao: ratingValue,
       data: new Date().toISOString()
     };
-    
-   
+
     const comentarios = JSON.parse(localStorage.getItem('ComentariosFC25')) || [];
     comentarios.unshift(novoComentario);
     localStorage.setItem('ComentariosFC25', JSON.stringify(comentarios));
-    
- 
+
     carregarComentarios();
     comentarioTexto.value = '';
-    
-
-    document.querySelectorAll('.star.selected').forEach(star => {
-      star.classList.remove('selected');
-    });
+    ratingValue = 0;
+    updateStars(0); 
   });
-  
 
-  const stars = document.querySelectorAll('.star');
-  stars.forEach(star => {
-    star.addEventListener('click', function() {
-      const value = parseInt(this.getAttribute('data-value'));
-      
-      stars.forEach((s, index) => {
-        if (index < value) {
-          s.classList.add('selected');
-        } else {
-          s.classList.remove('selected');
-        }
-      });
-    });
-  });
-  
-  
   carregarComentarios();
-});</script>
-<script>
-function formatarNomeUsuario(emailOuNome) {
+});
 
-  if (emailOuNome.includes('@')) {
-    return emailOuNome.split('@')[0]; 
+// Função para mostrar toast (mensagens temporárias)
+function mostrarToast(mensagem) {
+  let container = document.querySelector('.toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.classList.add('toast-container');
+    document.body.appendChild(container);
   }
-  return emailOuNome; 
-}</script>
 
-  
-  <div class="position-fixed bottom-0 end-0 mb-3 me-3 bg-dark bg-opacity-75 text-white p-3 rounded d-flex align-items-center gap-2">
-    <img src="imagens/pagjogos/classificacao_16.png" alt="Classificação 16 anos" style="width: 40px;" />
-    <p class="mb-0 small">Linguagem Imprópria, Violência</p>
-  </div>
+  const toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.textContent = mensagem;
 
-  <script>
-    const stars = document.querySelectorAll('.star');
-    let ratingValue = 0;
-    stars.forEach((star, index) => {
-      star.addEventListener('click', () => {
-        ratingValue = index + 1;
-        updateStars(ratingValue);
-      });
-    });
-    function updateStars(value) {
-      stars.forEach((star, i) => {
-        if (i < value) {
-          star.classList.add('text-warning');
-          star.classList.remove('text-secondary');
-        } else {
-          star.classList.add('text-secondary');
-          star.classList.remove('text-warning');
-        }
-      });
-    }
-  </script>
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 100);
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+</script>
+
+
+
+
+
   <script>
     const imagens = document.querySelectorAll('.gallery img');
     let imagemAtiva = null;
@@ -447,6 +460,15 @@ function formatarNomeUsuario(emailOuNome) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/contalogada.js"></script>
   <script src="js/login.js"></script>
-  <script src="js/logout.js"></script>
+
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100">
+  <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toast-body">
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
