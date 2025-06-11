@@ -425,7 +425,7 @@ nomeInput.addEventListener('blur', function() {
   const regexNomeCompleto = /^[a-zA-ZÀ-ÿ]+(\s[a-zA-ZÀ-ÿ]+)+$/;
 
   if (!regexNomeCompleto.test(nome)) {
-    mostrarToast('Nome inválido! ');
+    mostrarToast('Nome inválido!');
     return;
   }
 });
@@ -459,7 +459,7 @@ if (dataInput) {
     limiteMaximo.setFullYear(limiteMaximo.getFullYear() - 100);
 
     if (dataNascimentoSemHora < limiteMaximo) {
-      mostrarToast('Data inválida! Idade máxima permitida é 100 anos.', dataInput);
+      mostrarToast('Data inválida!', dataInput);
       return;
     }
 
