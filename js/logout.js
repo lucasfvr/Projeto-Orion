@@ -15,7 +15,7 @@ function logout(){
   setTimeout(dialog1(), 2000);
   setTimeout(() => {
     closeDialog1()
-  }, timeout = 4000);
+  }, timeout = 6000);
 
   window.location.reload()
 }
