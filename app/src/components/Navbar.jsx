@@ -18,8 +18,13 @@ function OrionNavbar() {
         handleCloseLogoutModal();
     };
 
-    const handleBibliotecaClick = (e) => {
-        if (window.location.pathname.includes('/react/')) {
+    const handleNavClick = (e, page) => {
+        const current = window.location.pathname.replace(/\\/g, '/').toLowerCase();
+        if (
+            (page === 'home' && current.endsWith('/index.html')) ||
+            (page === 'biblioteca' && current.endsWith('/biblioteca.html')) ||
+            (page === 'orionpass' && (current.endsWith('/react/index.html') || current.endsWith('/react/')))
+        ) {
             e.preventDefault();
         }
     };
@@ -35,13 +40,13 @@ function OrionNavbar() {
 
                     <div className="d-none d-xxl-block mx-auto">
                         <Nav className="text-center">
-                            <Nav.Link href="index.html" active>
+                            <Nav.Link href="index.html" active onClick={e => handleNavClick(e, 'home')}>
                                 <HomeIcon /> <div>Home</div>
                             </Nav.Link>
-                            <Nav.Link href="react/" onClick={handleBibliotecaClick}>
+                            <Nav.Link href="biblioteca.html" onClick={e => handleNavClick(e, 'biblioteca')}>
                                 <ControllerIcon /> <div>Biblioteca de Jogos</div>
                             </Nav.Link>
-                            <Nav.Link href="orionpass.html" className="text-primary-emphasis">
+                            <Nav.Link href="react/index.html" className="text-primary-emphasis" onClick={e => handleNavClick(e, 'orionpass')}>
                                 <RocketIcon /> <div>Orion Pass</div>
                             </Nav.Link>
                         </Nav>
